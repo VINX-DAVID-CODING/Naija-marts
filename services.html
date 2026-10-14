@@ -1,0 +1,2507 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Our Services | NaijaMart</title>
+  <meta name="description" content="Explore NaijaMart's shopping features, product discovery, wishlists, shopping cart and customer support experience.">  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">  <style>
+    /* =====================================
+       1. GLOBAL STYLES
+    ===================================== */
+
+    :root {
+      --orange: #ff8500;
+      --orange-dark: #e96d00;
+      --orange-light: #fff0dc;
+      --black: #171717;
+      --dark: #242424;
+      --text: #555;
+      --muted: #858585;
+      --white: #fff;
+      --green: #098653;
+      --border: #eeeeee;
+      --shadow: 0 18px 55px rgba(0, 0, 0, 0.09);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Outfit", sans-serif;
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 50px;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 4px rgba(255, 133, 0, 0.13);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: clamp(33px, 4.5vw, 49px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .orange-text {
+      color: var(--orange);
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =====================================
+       2. TOP ANNOUNCEMENT
+    ===================================== */
+
+    .announcement {
+      padding: 9px 15px;
+      text-align: center;
+      color: white;
+      background: var(--black);
+      font-size: 11px;
+      letter-spacing: 0.3px;
+    }
+
+    .announcement strong {
+      color: #ffb768;
+    }
+
+    /* =====================================
+       3. NAVIGATION BAR
+    ===================================== */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-symbol {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #ffb34f, #f36e00);
+      border-radius: 14px;
+      color: white;
+      font-family: "Outfit", sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(255, 133, 0, 0.25);
+    }
+
+    .logo-text {
+      font-family: "Outfit", sans-serif;
+      color: var(--black);
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo-text span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 12px;
+      font-weight: 800;
+      color: #555;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--orange-dark);
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -11px;
+      height: 3px;
+      border-radius: 10px;
+      background: var(--orange);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-icon {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      background: #fff3e5;
+      border-radius: 12px;
+      font-size: 19px;
+      transition: 0.3s;
+    }
+
+    .nav-icon:hover {
+      color: white;
+      background: var(--orange);
+      transform: translateY(-3px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 12px;
+      background: var(--orange-light);
+      font-size: 22px;
+    }
+
+    /* =====================================
+       4. HERO SECTION
+       TWO LARGE, BEAUTIFUL PICTURES
+    ===================================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 0 85px;
+      background:
+        radial-gradient(ellipse at 10% 15%, rgba(255, 160, 51, 0.16), transparent 35%),
+        radial-gradient(ellipse at 90% 80%, rgba(255, 115, 0, 0.13), transparent 35%),
+        linear-gradient(135deg, #fffaf4 0%, #fff1df 48%, #fff 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -130px;
+      right: -100px;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 133, 0, 0.17);
+      box-shadow:
+        0 0 0 35px rgba(255, 133, 0, 0.04),
+        0 0 0 75px rgba(255, 133, 0, 0.025);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -120px;
+      bottom: -200px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255, 133, 0, 0.07);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      animation: slideUp 0.8s ease both;
+    }
+
+    .hero h1 {
+      color: var(--black);
+      font-size: clamp(43px, 5.2vw, 67px);
+      font-weight: 900;
+      line-height: 1.04;
+      letter-spacing: -2.7px;
+      margin-bottom: 23px;
+    }
+
+    .hero h1 .orange-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero h1 .orange-text::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -3px;
+      height: 8px;
+      border-radius: 10px;
+      background: #ffc77f;
+      z-index: -1;
+      transform: rotate(-2deg);
+    }
+
+    .hero-description {
+      max-width: 490px;
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 49px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 21px;
+      border-radius: 13px;
+      border: 1px solid transparent;
+      font-size: 12px;
+      font-weight: 900;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, #ff9e2d, #f27600);
+      box-shadow: 0 10px 25px rgba(255, 133, 0, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 32px rgba(255, 133, 0, 0.34);
+    }
+
+    .btn-outline {
+      background: white;
+      border-color: #e9dfd3;
+      color: var(--black);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--orange);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 27px;
+      font-size: 11px;
+      color: #777;
+    }
+
+    .hero-note-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      background: #e5f8eb;
+      border-radius: 11px;
+      color: var(--green);
+      font-size: 17px;
+    }
+
+    .hero-note strong {
+      display: block;
+      color: #333;
+      font-size: 11px;
+    }
+
+    /* Two-picture visual collage */
+
+    .hero-gallery {
+      position: relative;
+      min-width: 0;
+      min-height: 490px;
+      animation: slideUp 1s ease both;
+      animation-delay: 0.15s;
+    }
+
+    .hero-photo {
+      position: absolute;
+      overflow: hidden;
+      border: 6px solid white;
+      border-radius: 27px;
+      box-shadow: 0 25px 65px rgba(76, 43, 13, 0.19);
+      transition: transform 0.5s, box-shadow 0.5s;
+      background: #f3e7da;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s;
+    }
+
+    .hero-photo:hover {
+      box-shadow: 0 30px 75px rgba(76, 43, 13, 0.27);
+    }
+
+    .hero-photo:hover img {
+      transform: scale(1.08);
+    }
+
+    .hero-photo.photo-one {
+      width: 64%;
+      height: 355px;
+      top: 0;
+      left: 0;
+      transform: rotate(-4deg);
+      z-index: 2;
+    }
+
+    .hero-photo.photo-one:hover {
+      transform: rotate(0deg) translateY(-7px);
+    }
+
+    .hero-photo.photo-two {
+      width: 62%;
+      height: 330px;
+      right: 0;
+      bottom: 0;
+      transform: rotate(4deg);
+      z-index: 3;
+    }
+
+    .hero-photo.photo-two:hover {
+      transform: rotate(0deg) translateY(-7px);
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      padding: 14px 15px;
+      color: white;
+      border-radius: 15px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      padding-top: 45px;
+      pointer-events: none;
+    }
+
+    .photo-caption span {
+      display: inline-block;
+      padding: 5px 9px;
+      background: var(--orange);
+      border-radius: 6px;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .photo-caption h3 {
+      font-size: 19px;
+      color: white;
+    }
+
+    .photo-caption p {
+      font-size: 10px;
+      color: #f1f1f1;
+      margin-top: 4px;
+    }
+
+    .gallery-badge {
+      position: absolute;
+      top: 47%;
+      left: 38%;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.13);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .gallery-badge-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #fff0df;
+      font-size: 20px;
+    }
+
+    .gallery-badge h4 {
+      color: var(--black);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .gallery-badge p {
+      color: var(--muted);
+      font-size: 9px;
+      margin-top: 3px;
+    }
+
+    /* =====================================
+       5. SERVICE HIGHLIGHTS STRIP
+    ===================================== */
+
+    .highlights {
+      position: relative;
+      z-index: 5;
+      background: white;
+      border-top: 1px solid #f3e7da;
+      border-bottom: 1px solid #f3e7da;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 25px 0;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 10px;
+      border-right: 1px solid #eee;
+    }
+
+    .highlight-item:last-child {
+      border-right: none;
+    }
+
+    .highlight-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: #fff0df;
+      font-size: 21px;
+    }
+
+    .highlight-item h3 {
+      color: var(--black);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .highlight-item p {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* =====================================
+       6. MAIN SERVICES
+    ===================================== */
+
+    .services-section {
+      background: white;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+      padding: 30px;
+      border: 1px solid #eee;
+      border-radius: 22px;
+      background: white;
+      transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      top: -70px;
+      right: -70px;
+      border-radius: 50%;
+      background: var(--card-tint, #fff0df);
+      transition: transform 0.4s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #ffd4aa;
+      box-shadow: var(--shadow);
+    }
+
+    .service-card:hover::before {
+      transform: scale(1.7);
+    }
+
+    .service-card:nth-child(2) {
+      --card-tint: #e6f8ed;
+    }
+
+    .service-card:nth-child(3) {
+      --card-tint: #e9e8ff;
+    }
+
+    .service-card:nth-child(4) {
+      --card-tint: #e5f3ff;
+    }
+
+    .service-card:nth-child(5) {
+      --card-tint: #ffe6ef;
+    }
+
+    .service-card:nth-child(6) {
+      --card-tint: #fff4c9;
+    }
+
+    .service-icon {
+      position: relative;
+      z-index: 1;
+      width: 65px;
+      height: 65px;
+      display: grid;
+      place-items: center;
+      background: var(--card-tint, #fff0df);
+      border-radius: 19px;
+      font-size: 29px;
+      margin-bottom: 25px;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover .service-icon {
+      transform: rotate(-7deg) scale(1.08);
+    }
+
+    .service-card h3 {
+      position: relative;
+      z-index: 1;
+      color: var(--black);
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      position: relative;
+      z-index: 1;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .service-link {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--orange-dark);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .service-link span {
+      transition: transform 0.25s;
+    }
+
+    .service-card:hover .service-link span {
+      transform: translateX(5px);
+    }
+
+    /* =====================================
+       7. FEATURED SERVICE BANNER
+    ===================================== */
+
+    .featured-service {
+      padding: 30px 0 90px;
+      background: white;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 390px;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #171717;
+      box-shadow: var(--shadow);
+    }
+
+    .featured-image {
+      min-height: 390px;
+      overflow: hidden;
+    }
+
+    .featured-image img {
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+      transition: transform 0.7s;
+    }
+
+    .featured-grid:hover .featured-image img {
+      transform: scale(1.05);
+    }
+
+    .featured-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 50px;
+      color: white;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255, 133, 0, 0.2), transparent 35%),
+        #171717;
+    }
+
+    .featured-content .eyebrow {
+      color: #ffb768;
+      background: rgba(255, 133, 0, 0.13);
+    }
+
+    .featured-content h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .featured-content p {
+      color: #c3c3c3;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    /* =====================================
+       8. HOW IT WORKS
+    ===================================== */
+
+    .how-section {
+      background: #fff9f2;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .step-card {
+      position: relative;
+      padding: 30px;
+      background: white;
+      border: 1px solid #f0e7de;
+      border-radius: 21px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .step-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      background: var(--orange);
+      color: white;
+      border-radius: 16px;
+      font-size: 19px;
+      font-weight: 900;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 18px rgba(255, 133, 0, 0.23);
+    }
+
+    .step-card h3 {
+      font-size: 20px;
+      color: var(--black);
+      margin-bottom: 11px;
+    }
+
+    .step-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =====================================
+       9. CUSTOMER SUPPORT
+    ===================================== */
+
+    .support-section {
+      background: white;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .support-image-wrap {
+      position: relative;
+    }
+
+    .support-image {
+      height: 420px;
+      object-fit: cover;
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .support-image-label {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      right: 20px;
+      padding: 20px;
+      border-radius: 17px;
+      color: white;
+      background: rgba(20, 20, 20, 0.82);
+      backdrop-filter: blur(10px);
+    }
+
+    .support-image-label h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .support-image-label p {
+      font-size: 11px;
+      color: #ddd;
+    }
+
+    .support-copy .section-title {
+      font-size: clamp(32px, 4vw, 44px);
+    }
+
+    .support-copy > p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .support-list {
+      display: grid;
+      gap: 19px;
+      margin-bottom: 28px;
+    }
+
+    .support-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+    }
+
+    .support-check {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 11px;
+      background: #e7f8ed;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .support-list-item h4 {
+      font-size: 14px;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .support-list-item p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =====================================
+       10. FAQ ACCORDION
+    ===================================== */
+
+    .faq-section {
+      background: #fff9f2;
+    }
+
+    .faq-container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid #eee7df;
+      border-radius: 16px;
+      margin-bottom: 13px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .faq-item.active {
+      border-color: #ffc17e;
+      box-shadow: 0 8px 25px rgba(255, 133, 0, 0.07);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 21px 23px;
+      border: none;
+      background: white;
+      text-align: left;
+      color: var(--black);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .faq-plus {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      font-size: 20px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .faq-item.active .faq-plus {
+      background: var(--orange);
+      color: white;
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-answer-inner {
+      overflow: hidden;
+    }
+
+    .faq-answer p {
+      padding: 0 23px 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =====================================
+       11. CALL TO ACTION
+    ===================================== */
+
+    .cta-section {
+      padding: 85px 0;
+      background: white;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      padding: 65px 30px;
+      border-radius: 28px;
+      text-align: center;
+      color: white;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.2), transparent 25%),
+        radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.13), transparent 25%),
+        linear-gradient(135deg, #ffa43f, #f27600);
+    }
+
+    .cta-box h2 {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(31px, 4.5vw, 47px);
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .cta-box p {
+      position: relative;
+      z-index: 1;
+      max-width: 580px;
+      margin: 0 auto 27px;
+      color: rgba(255, 255, 255, 0.93);
+      font-size: 14px;
+    }
+
+    .cta-box .btn {
+      position: relative;
+      z-index: 1;
+      color: var(--black);
+      background: white;
+    }
+
+    .cta-box .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* =====================================
+       12. FOOTER
+    ===================================== */
+
+    .footer {
+      padding: 65px 0 0;
+      color: #ccc;
+      background: #151515;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 43px;
+    }
+
+    .footer .logo-text {
+      color: white;
+    }
+
+    .footer-description {
+      max-width: 300px;
+      color: #aaa;
+      font-size: 12px;
+      margin-top: 17px;
+    }
+
+    .footer h3 {
+      color: white;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      width: fit-content;
+      color: #aaa;
+      font-size: 12px;
+      transition: color 0.25s, transform 0.25s;
+    }
+
+    .footer-links a:hover {
+      color: #ffb768;
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 23px 0;
+      border-top: 1px solid #333;
+      color: #999;
+      font-size: 11px;
+    }
+
+    .footer-bottom span {
+      color: #ffb768;
+    }
+
+    /* =====================================
+       13. BACK TO TOP
+    ===================================== */
+
+    .back-top {
+      position: fixed;
+      z-index: 900;
+      right: 22px;
+      bottom: 22px;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: none;
+      border-radius: 15px;
+      color: white;
+      background: var(--orange);
+      box-shadow: 0 8px 22px rgba(255, 133, 0, 0.3);
+      font-size: 23px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: 0.3s;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      background: var(--orange-dark);
+      transform: translateY(-4px);
+    }
+
+    /* =====================================
+       14. ANIMATIONS
+    ===================================== */
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =====================================
+       15. TABLET RESPONSIVENESS
+    ===================================== */
+
+    @media (max-width: 1050px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .hero-gallery {
+        min-height: 420px;
+      }
+
+      .hero-photo.photo-one {
+        height: 310px;
+      }
+
+      .hero-photo.photo-two {
+        height: 290px;
+      }
+
+      .hero h1 {
+        font-size: 53px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .featured-content {
+        padding: 35px;
+      }
+
+      .support-grid {
+        gap: 35px;
+      }
+
+      .footer-grid {
+        gap: 23px;
+      }
+    }
+
+    /* =====================================
+       16. MOBILE RESPONSIVENESS
+    ===================================== */
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 5%;
+        background: white;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid #eee;
+      }
+
+      .nav-links.open {
+        display: flex;
+        animation: slideUp 0.25s ease;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 0;
+      }
+
+      .nav-links a.active::after {
+        display: none;
+      }
+
+      .nav-actions {
+        margin-left: auto;
+      }
+
+      .hero {
+        padding: 55px 0 65px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons,
+      .hero-note {
+        justify-content: center;
+      }
+
+      .hero-gallery {
+        width: 100%;
+        max-width: 580px;
+        min-height: 440px;
+        margin: auto;
+      }
+
+      .hero-photo.photo-one {
+        width: 63%;
+        height: 325px;
+      }
+
+      .hero-photo.photo-two {
+        width: 61%;
+        height: 300px;
+      }
+
+      .highlights-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .highlight-item {
+        justify-content: flex-start;
+        padding: 16px 10px;
+      }
+
+      .highlight-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .highlight-item:nth-child(1),
+      .highlight-item:nth-child(2) {
+        border-bottom: 1px solid #eee;
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image,
+      .featured-image img {
+        min-height: 300px;
+        height: 300px;
+      }
+
+      .featured-content {
+        padding: 35px;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .support-image-wrap {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .announcement {
+        font-size: 10px;
+      }
+
+      .logo-symbol {
+        width: 37px;
+        height: 37px;
+        font-size: 22px;
+      }
+
+      .logo-text {
+        font-size: 22px;
+      }
+
+      .nav-inner {
+        gap: 8px;
+      }
+
+      .nav-actions {
+        gap: 5px;
+      }
+
+      .nav-icon {
+        width: 33px;
+        height: 33px;
+        font-size: 16px;
+      }
+
+      .hero {
+        padding: 42px 0 48px;
+      }
+
+      .hero h1 {
+        font-size: clamp(40px, 10vw, 49px);
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 12px;
+      }
+
+      .hero-buttons {
+        gap: 8px;
+      }
+
+      .btn {
+        min-height: 44px;
+        padding: 11px 14px;
+        font-size: 10px;
+      }
+
+      .hero-gallery {
+        min-height: 335px;
+      }
+
+      .hero-photo {
+        border-width: 4px;
+        border-radius: 20px;
+      }
+
+      .hero-photo.photo-one {
+        height: 245px;
+      }
+
+      .hero-photo.photo-two {
+        height: 225px;
+      }
+
+      .photo-caption {
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+        padding: 10px;
+        padding-top: 34px;
+        border-radius: 12px;
+      }
+
+      .photo-caption span {
+        font-size: 7px;
+        padding: 4px 6px;
+        margin-bottom: 4px;
+      }
+
+      .photo-caption h3 {
+        font-size: 14px;
+      }
+
+      .photo-caption p {
+        font-size: 9px;
+      }
+
+      .gallery-badge {
+        left: 33%;
+        top: 45%;
+        gap: 7px;
+        padding: 9px;
+        border-radius: 12px;
+      }
+
+      .gallery-badge-icon {
+        width: 29px;
+        height: 29px;
+        font-size: 16px;
+        border-radius: 9px;
+      }
+
+      .gallery-badge h4 {
+        font-size: 9px;
+      }
+
+      .gallery-badge p {
+        font-size: 8px;
+      }
+
+      .hero-note {
+        font-size: 10px;
+      }
+
+      .highlights-grid {
+        padding: 12px 0;
+      }
+
+      .highlight-item {
+        gap: 8px;
+        padding: 13px 4px;
+      }
+
+      .highlight-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 17px;
+        border-radius: 10px;
+      }
+
+      .highlight-item h3 {
+        font-size: 10px;
+      }
+
+      .highlight-item p {
+        font-size: 9px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .section-description {
+        font-size: 12px;
+      }
+
+      .section-heading {
+        margin-bottom: 35px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .service-card {
+        min-height: auto;
+        padding: 25px;
+      }
+
+      .service-card h3 {
+        font-size: 20px;
+      }
+
+      .service-card p {
+        font-size: 12px;
+      }
+
+      .featured-service {
+        padding: 0 0 65px;
+      }
+
+      .featured-grid {
+        border-radius: 22px;
+      }
+
+      .featured-image,
+      .featured-image img {
+        min-height: 235px;
+        height: 235px;
+      }
+
+      .featured-content {
+        padding: 27px 23px;
+      }
+
+      .featured-content h2 {
+        font-size: 33px;
+      }
+
+      .featured-content p {
+        font-size: 12px;
+      }
+
+      .step-card {
+        padding: 25px;
+      }
+
+      .support-image {
+        height: 330px;
+      }
+
+      .support-image-label {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 15px;
+      }
+
+      .support-image-label h3 {
+        font-size: 17px;
+      }
+
+      .support-copy .section-title {
+        font-size: 34px;
+      }
+
+      .faq-question {
+        padding: 17px;
+        font-size: 12px;
+      }
+
+      .faq-answer p {
+        padding: 0 17px 18px;
+        font-size: 12px;
+      }
+
+      .cta-section {
+        padding: 60px 0;
+      }
+
+      .cta-box {
+        padding: 45px 20px;
+        border-radius: 22px;
+      }
+
+      .cta-box h2 {
+        font-size: 32px;
+      }
+
+      .cta-box p {
+        font-size: 12px;
+      }
+
+      .footer {
+        padding-top: 48px;
+      }
+
+      .footer-grid {
+        gap: 28px 16px;
+      }
+
+      .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .back-top {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style></head><body>  <!-- ANNOUNCEMENT BAR -->  <div class="announcement">
+    Welcome to <strong>NaijaMart</strong> — Discover More. Shop Smarter.
+  </div>  <!-- NAVIGATION -->  <header class="navbar">
+    <div class="container nav-inner">  <a href="index.html" class="logo">
+    <div class="logo-symbol">N</div>
+    <div class="logo-text">Naija<span>Mart</span></div>
+  </a>
+
+  <nav aria-label="Main navigation">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index1.html">Category</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Registration</a></li>
+
+    </ul>
+  </nav>
+
+  <div class="nav-actions">
+          <a href="login.html">login</a>
+      <a href="register.html">Register</a>
+    <a href="wishlist.html" class="nav-icon" aria-label="Wishlist">♡</a>
+    <a href="cart.html" class="nav-icon" aria-label="Shopping cart">🛒</a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navLinks">
+      ☰
+    </button>
+  </div>
+
+</div>
+
+  </header>  <main><!-- ===================================
+     HERO WITH TWO LARGE PICTURES
+==================================== -->
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <!-- HERO TEXT -->
+    <div class="hero-copy">
+
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        What we offer
+      </div>
+
+      <h1>
+        Shopping made<br>
+        <span class="orange-text">beautifully easy.</span>
+      </h1>
+
+      <p class="hero-description">
+        Welcome to NaijaMart, your online destination for discovering
+        products across electronics, fashion, home essentials and more.
+        Browse your favourites, explore product details, build your
+        wishlist and organise your shopping in one place.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="products.html" class="btn btn-primary">
+          Explore Products <span>→</span>
+        </a>
+
+        <a href="#our-services" class="btn btn-outline">
+          Discover Our Services ↓
+        </a>
+      </div>
+
+      <div class="hero-note">
+        <div class="hero-note-icon">✓</div>
+        <div>
+          <strong>One convenient shopping destination</strong>
+          Explore products with a clean, modern interface.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- HERO IMAGE COLLAGE -->
+    <div class="hero-gallery">
+
+      <!-- FIRST PICTURE: SHOPPING AND FASHION -->
+      <div class="hero-photo photo-one">
+        <img
+          src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=90"
+          alt="Colourful fashion shopping and clothing"
+          fetchpriority="high"
+        >
+
+        <div class="photo-caption">
+          <span>Discover your style</span>
+          <h3>Fashion & Lifestyle</h3>
+          <p>Find products for your everyday needs.</p>
+        </div>
+      </div>
+
+      <!-- SECOND PICTURE: ONLINE SHOPPING -->
+      <div class="hero-photo photo-two">
+        <img
+          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=90"
+          alt="Customer shopping with a payment card"
+          fetchpriority="high"
+        >
+
+        <div class="photo-caption">
+          <span>Your shopping journey</span>
+          <h3>Shop Your Way</h3>
+          <p>Explore products and organise your choices.</p>
+        </div>
+      </div>
+
+      <!-- FLOATING BADGE -->
+      <div class="gallery-badge">
+        <div class="gallery-badge-icon">🛍️</div>
+        <div>
+          <h4>The NaijaMart Experience</h4>
+          <p>Discover. Choose. Explore.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICE HIGHLIGHTS -->
+<section class="highlights">
+  <div class="container highlights-grid">
+
+    <div class="highlight-item">
+      <div class="highlight-icon">🔎</div>
+      <div>
+        <h3>Product Discovery</h3>
+        <p>Explore available items</p>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="highlight-icon">🛒</div>
+      <div>
+        <h3>Shopping Cart</h3>
+        <p>Organise your selections</p>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="highlight-icon">♡</div>
+      <div>
+        <h3>Wishlist</h3>
+        <p>Save your favourites</p>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="highlight-icon">📱</div>
+      <div>
+        <h3>Responsive Website</h3>
+        <p>Designed for your screen</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================
+     OUR SERVICES
+==================================== -->
+
+<section class="section services-section" id="our-services">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Explore our services
+      </div>
+
+      <h2 class="section-title">
+        Everything you need for a<br>
+        <span class="orange-text">better shopping experience.</span>
+      </h2>
+
+      <p class="section-description">
+        NaijaMart brings useful shopping features together in one place,
+        helping visitors discover products and manage their selections
+        with ease.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- SERVICE 1 -->
+      <article class="service-card reveal">
+        <div class="service-icon">🛍️</div>
+
+        <h3>Online Shopping</h3>
+
+        <p>
+          Explore products across different categories, discover items
+          that interest you and navigate the store through a modern
+          shopping interface.
+        </p>
+
+        <a href="products.html" class="service-link">
+          Explore products <span>→</span>
+        </a>
+      </article>
+
+      <!-- SERVICE 2 -->
+      <article class="service-card reveal">
+        <div class="service-icon">📦</div>
+
+        <h3>Product Discovery</h3>
+
+        <p>
+          Browse product collections and open individual product pages
+          to see the descriptions, prices and other information
+          available for each item.
+        </p>
+
+        <a href="categories.html" class="service-link">
+          Browse categories <span>→</span>
+        </a>
+      </article>
+
+      <!-- SERVICE 3 -->
+      <article class="service-card reveal">
+        <div class="service-icon">🛒</div>
+
+        <h3>Shopping Cart</h3>
+
+        <p>
+          Keep the products you want together, review your selections
+          and use the cart to organise your shopping before continuing
+          to checkout.
+        </p>
+
+        <a href="cart.html" class="service-link">
+          View shopping cart <span>→</span>
+        </a>
+      </article>
+
+      <!-- SERVICE 4 -->
+      <article class="service-card reveal">
+        <div class="service-icon">💛</div>
+
+        <h3>Wishlist</h3>
+
+        <p>
+          Save products you like so you can revisit your favourites
+          while browsing the store and deciding what you want.
+        </p>
+
+        <a href="wishlist.html" class="service-link">
+          View wishlist <span>→</span>
+        </a>
+      </article>
+
+      <!-- SERVICE 5 -->
+      <article class="service-card reveal">
+        <div class="service-icon">👤</div>
+
+        <h3>Account Dashboard</h3>
+
+        <p>
+          Visit the account page to explore the available account
+          interface and its profile, preference and shopping-related
+          sections.
+        </p>
+
+        <a href="account.html" class="service-link">
+          Visit account page <span>→</span>
+        </a>
+      </article>
+
+      <!-- SERVICE 6 -->
+      <article class="service-card reveal">
+        <div class="service-icon">💬</div>
+
+        <h3>Contact & Support</h3>
+
+        <p>
+          Find the contact page when you need information about the
+          website, have a question or want to explore the available
+          support options.
+        </p>
+
+        <a href="contact.html" class="service-link">
+          Contact us <span>→</span>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================================
+     FEATURED SERVICE BANNER
+==================================== -->
+
+<section class="featured-service">
+  <div class="container">
+
+    <div class="featured-grid reveal">
+
+      <div class="featured-image">
+        <img
+          src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1000&q=90"
+          alt="Shopping products and colourful shopping bags"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="featured-content">
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Made for easy discovery
+        </div>
+
+        <h2>
+          Your favourite finds.<br>
+          All in one place.
+        </h2>
+
+        <p>
+          From discovering new products to saving favourites and
+          organising your cart, NaijaMart is designed to make the
+          browsing experience straightforward and enjoyable.
+        </p>
+
+        <a href="products.html" class="btn btn-primary">
+          Start Exploring <span>→</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================
+     HOW IT WORKS
+==================================== -->
+
+<section class="section how-section">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Simple shopping journey
+      </div>
+
+      <h2 class="section-title">
+        Three steps to get <span class="orange-text">started.</span>
+      </h2>
+
+      <p class="section-description">
+        Discover how to move around NaijaMart and use the shopping
+        features available on the website.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+
+      <article class="step-card reveal">
+        <div class="step-number">01</div>
+
+        <h3>Discover</h3>
+
+        <p>
+          Visit the homepage, browse categories and explore products
+          that catch your interest.
+        </p>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">02</div>
+
+        <h3>Select Your Favourites</h3>
+
+        <p>
+          Open a product page to learn more about an item, then add
+          it to your cart or save it to your wishlist.
+        </p>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">03</div>
+
+        <h3>Review Your Selection</h3>
+
+        <p>
+          Visit your cart to review selected items and continue to
+          checkout if the checkout features are configured.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================
+     SUPPORT SECTION
+==================================== -->
+
+<section class="section support-section">
+  <div class="container support-grid">
+
+    <div class="support-image-wrap reveal">
+      <img
+        class="support-image"
+        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85"
+        alt="Team collaborating and discussing ideas"
+        loading="lazy"
+      >
+
+      <div class="support-image-label">
+        <h3>We're building a better experience.</h3>
+        <p>A clear, organised website for discovering products.</p>
+      </div>
+    </div>
+
+    <div class="support-copy reveal">
+
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Here to help
+      </div>
+
+      <h2 class="section-title">
+        Need more <span class="orange-text">information?</span>
+      </h2>
+
+      <p>
+        We want visitors to understand how to navigate NaijaMart.
+        You can explore the pages below to find the information
+        relevant to your shopping journey.
+      </p>
+
+      <div class="support-list">
+
+        <div class="support-list-item">
+          <div class="support-check">✓</div>
+          <div>
+            <h4>Questions about the website?</h4>
+            <p>Visit our contact page to explore the available contact options.</p>
+          </div>
+        </div>
+
+        <div class="support-list-item">
+          <div class="support-check">✓</div>
+          <div>
+            <h4>Looking for a particular product?</h4>
+            <p>Browse our products and categories to discover available items.</p>
+          </div>
+        </div>
+
+        <div class="support-list-item">
+          <div class="support-check">✓</div>
+          <div>
+            <h4>Want to review your selections?</h4>
+            <p>Open your cart or wishlist to see the products you have saved.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="contact.html" class="btn btn-primary">
+        Visit Contact Page <span>→</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================
+     FREQUENTLY ASKED QUESTIONS
+==================================== -->
+
+<section class="section faq-section">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Frequently asked questions
+      </div>
+
+      <h2 class="section-title">
+        Questions? We've got <span class="orange-text">answers.</span>
+      </h2>
+
+      <p class="section-description">
+        Here are some helpful answers about using the NaijaMart website.
+      </p>
+    </div>
+
+    <div class="faq-container">
+
+      <div class="faq-item reveal">
+        <button
+          class="faq-question"
+          aria-expanded="false"
+          aria-controls="faq-answer-1">
+          What is NaijaMart?
+          <span class="faq-plus">+</span>
+        </button>
+
+        <div class="faq-answer" id="faq-answer-1">
+          <div class="faq-answer-inner">
+            <p>
+              NaijaMart is an online shopping website designed to bring
+              product discovery, categories, product details, a shopping
+              cart and a wishlist together in one place.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button
+          class="faq-question"
+          aria-expanded="false"
+          aria-controls="faq-answer-2">
+          How do I find a product?
+          <span class="faq-plus">+</span>
+        </button>
+
+        <div class="faq-answer" id="faq-answer-2">
+          <div class="faq-answer-inner">
+            <p>
+              Start from the homepage, visit the products page or browse
+              categories. Select an item to open its product details.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button
+          class="faq-question"
+          aria-expanded="false"
+          aria-controls="faq-answer-3">
+          What does the wishlist do?
+          <span class="faq-plus">+</span>
+        </button>
+
+        <div class="faq-answer" id="faq-answer-3">
+          <div class="faq-answer-inner">
+            <p>
+              The wishlist is intended for keeping products you like
+              so you can revisit them. Its saved items depend on how
+              the website's wishlist functionality is implemented.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button
+          class="faq-question"
+          aria-expanded="false"
+          aria-controls="faq-answer-4">
+          Can I use NaijaMart on my phone?
+          <span class="faq-plus">+</span>
+        </button>
+
+        <div class="faq-answer" id="faq-answer-4">
+          <div class="faq-answer-inner">
+            <p>
+              Yes. This page is designed to adapt to mobile phones,
+              tablets and desktop screens. Some features may depend
+              on your website's implementation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button
+          class="faq-question"
+          aria-expanded="false"
+          aria-controls="faq-answer-5">
+          Does the website support real payments and delivery?
+          <span class="faq-plus">+</span>
+        </button>
+
+        <div class="faq-answer" id="faq-answer-5">
+          <div class="faq-answer-inner">
+            <p>
+              A working checkout page alone does not guarantee that
+              real payments or deliveries are available. Those services
+              require the appropriate payment, order-management and
+              fulfilment integrations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================
+     FINAL CALL TO ACTION
+==================================== -->
+
+<section class="cta-section">
+  <div class="container">
+
+    <div class="cta-box reveal">
+      <h2>Ready to discover something great?</h2>
+
+      <p>
+        Explore products, browse categories and experience the
+        NaijaMart shopping interface for yourself.
+      </p>
+
+      <a href="products.html" class="btn">
+        Explore the Store <span>→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  </main>  <!-- ===================================
+       FOOTER
+  ==================================== -->  <footer class="footer">
+    <div class="container">  <div class="footer-grid">
+
+    <div>
+      <a href="index.html" class="logo">
+        <div class="logo-symbol">N</div>
+        <div class="logo-text">Naija<span>Mart</span></div>
+      </a>
+
+      <p class="footer-description">
+        Discover more. Shop smarter. Explore products through a modern,
+        colourful and convenient online shopping experience.
+      </p>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="categories.html">Categories</a>
+      </div>
+    </div>
+
+    <div>
+      <h3>Customer Care</h3>
+      <div class="footer-links">
+        <a href="services.html">Our Services</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="orders.html">My Orders</a>
+        <a href="account.html">My Account</a>
+      </div>
+    </div>
+
+    <div>
+      <h3>My Shopping</h3>
+      <div class="footer-links">
+        <a href="cart.html">Shopping Cart</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="products.html">Shop Products</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="currentYear"></span> NaijaMart. All rights reserved.</p>
+    <p>Made with <span>♥</span> for a better shopping experience.</p>
+  </div>
+
+</div>
+
+  </footer>  <!-- BACK TO TOP BUTTON -->  <button class="back-top" id="backTop" aria-label="Back to top">
+    ↑
+  </button>  <!-- ===================================
+       JAVASCRIPT
+  ==================================== -->  <script>
+    // =====================================
+    // 1. MOBILE NAVIGATION
+    // =====================================
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+    });
+
+    // Close the mobile menu after selecting a page.
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+      });
+    });
+
+    // Close the menu when clicking outside it.
+    document.addEventListener("click", function (event) {
+      const insideMenu = navLinks.contains(event.target);
+      const onToggle = menuToggle.contains(event.target);
+
+      if (!insideMenu && !onToggle) {
+        navLinks.classList.remove("open");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+      }
+    });
+
+    // =====================================
+    // 2. SCROLL REVEAL ANIMATIONS
+    // =====================================
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      revealElements.forEach(function (element) {
+        revealObserver.observe(element);
+      });
+    } else {
+      revealElements.forEach(function (element) {
+        element.classList.add("show");
+      });
+    }
+
+    // =====================================
+    // 3. FAQ ACCORDION
+    // =====================================
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(function (item) {
+      const question = item.querySelector(".faq-question");
+
+      question.addEventListener("click", function () {
+        const wasOpen = item.classList.contains("active");
+
+        // Close all FAQ items first.
+        faqItems.forEach(function (otherItem) {
+          otherItem.classList.remove("active");
+
+          otherItem
+            .querySelector(".faq-question")
+            .setAttribute("aria-expanded", "false");
+        });
+
+        // Open the selected item if it was previously closed.
+        if (!wasOpen) {
+          item.classList.add("active");
+          question.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    // =====================================
+    // 4. BACK TO TOP
+    // =====================================
+
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 450) {
+        backTop.classList.add("visible");
+      } else {
+        backTop.classList.remove("visible");
+      }
+    });
+
+    backTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // =====================================
+    // 5. AUTOMATIC COPYRIGHT YEAR
+    // =====================================
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script></body>
+</html>

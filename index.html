@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NaijaMart | Shop Everything You Love</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+  --primary: #f68b1e;
+  --primary-dark: #d96c00;
+  --dark: #202124;
+  --muted: #737373;
+  --background: #f5f6f8;
+  --white: #ffffff;
+  --green: #159447;
+  --border: #e8e8e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--background);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(1250px, 94%);
+  margin: auto;
+}
+
+/* TOP BAR */
+
+.top-bar {
+  background: #202124;
+  color: white;
+  padding: 8px 0;
+  font-size: 12px;
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.top-bar a {
+  color: #ffd3a3;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 3px 15px #00000009;
+}
+
+.header-main {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.search-box {
+  display: flex;
+  flex: 1;
+  max-width: 580px;
+  border: 1px solid #dedede;
+  border-radius: 7px;
+  overflow: hidden;
+  transition: border .3s, box-shadow .3s;
+}
+
+.search-box:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px #f68b1e20;
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 13px;
+}
+
+.search-box button {
+  border: 0;
+  background: var(--primary);
+  color: white;
+  padding: 0 20px;
+  transition: background .3s;
+}
+
+.search-box button:hover {
+  background: var(--primary-dark);
+}
+
+.header-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header-action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color .25s;
+}
+
+.header-action i {
+  font-size: 19px;
+}
+
+.header-action:hover {
+  color: var(--primary-dark);
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: var(--primary);
+  color: white;
+  min-width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+/* NAVIGATION */
+
+.nav-bar {
+  border-top: 1px solid #f0f0f0;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  min-height: 46px;
+}
+
+.nav-content a {
+  font-size: 13px;
+  font-weight: 600;
+  transition: color .25s;
+}
+
+.nav-content a:hover,
+.nav-content a.active {
+  color: var(--primary-dark);
+}
+
+.nav-content .category-link {
+  margin-right: 5px;
+}
+
+.mobile-menu-button {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 23px;
+}
+
+/* HERO */
+
+.hero {
+  padding: 27px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr) 220px;
+  gap: 18px;
+}
+
+.category-panel,
+.hero-banner,
+.promo-panel {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.category-panel {
+  padding: 17px 0;
+}
+
+.category-panel h3 {
+  font-size: 15px;
+  padding: 0 18px 12px;
+}
+
+.category-panel a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 18px;
+  font-size: 12px;
+  transition: background .25s, color .25s, padding .25s;
+}
+
+.category-panel a i {
+  width: 18px;
+  color: var(--primary);
+  text-align: center;
+}
+
+.category-panel a:hover {
+  background: #fff4e8;
+  color: var(--primary-dark);
+  padding-left: 23px;
+}
+
+.hero-banner {
+  min-height: 350px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(120deg, #fff0db, #ffe0ba);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: 35px;
+  max-width: 60%;
+}
+
+.hero-copy .eyebrow {
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(27px, 3vw, 43px);
+  line-height: 1.15;
+  margin: 12px 0;
+}
+
+.hero-copy p {
+  font-size: 13px;
+  color: #5e5144;
+  margin-bottom: 23px;
+}
+
+.primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: white;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: transform .25s, background .25s;
+}
+
+.primary-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 48%;
+  height: 95%;
+  object-fit: contain;
+  object-position: center bottom;
+  transition: transform .5s;
+}
+
+.hero-banner:hover .hero-image {
+  transform: scale(1.04);
+}
+
+.promo-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+}
+
+.promo-card {
+  flex: 1;
+  padding: 17px;
+  border-radius: 7px;
+  background: #edf8ef;
+}
+
+.promo-card.orange {
+  background: #fff1e2;
+}
+
+.promo-card i {
+  font-size: 22px;
+  color: var(--green);
+  margin-bottom: 9px;
+}
+
+.promo-card.orange i {
+  color: var(--primary-dark);
+}
+
+.promo-card h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.promo-card p {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* BENEFITS */
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+  margin: 0 auto 25px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px;
+  background: white;
+  border-radius: 8px;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.benefit:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 25px #00000008;
+}
+
+.benefit i {
+  font-size: 22px;
+  color: var(--primary);
+}
+
+.benefit h4 {
+  font-size: 12px;
+}
+
+.benefit p {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* SECTION HEADER */
+
+.section {
+  margin: 25px auto;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 17px 20px;
+  border-radius: 9px 9px 0 0;
+}
+
+.section-heading h2 {
+  font-size: 20px;
+}
+
+.section-heading p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.view-all {
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* FLASH SALES */
+
+.flash-section {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flash-heading {
+  color: white;
+  background: #e83c3c;
+}
+
+.flash-heading .view-all {
+  color: white;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.countdown span {
+  background: white;
+  color: #e83c3c;
+  padding: 4px 7px;
+  border-radius: 4px;
+}
+
+.flash-products {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: #ededed;
+}
+
+.product-card {
+  position: relative;
+  background: white;
+  padding: 13px;
+  min-width: 0;
+  overflow: hidden;
+  transition: box-shadow .3s, transform .3s;
+}
+
+.product-card:hover {
+  z-index: 2;
+  box-shadow: 0 8px 25px #00000012;
+  transform: translateY(-3px);
+}
+
+.product-image-link {
+  display: block;
+  position: relative;
+  background: #f8f8f8;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 175px;
+  object-fit: contain;
+  padding: 8px;
+  transition: transform .4s;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.07);
+}
+
+.discount-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  background: #ffe4e4;
+  color: #dc3030;
+  padding: 4px 7px;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.product-name {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  min-height: 38px;
+  transition: color .2s;
+}
+
+.product-name:hover {
+  color: var(--primary-dark);
+}
+
+.product-price {
+  font-size: 17px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.old-price {
+  font-size: 11px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: #777;
+  margin: 7px 0;
+}
+
+.product-rating .stars {
+  color: #f4a000;
+  letter-spacing: 1px;
+}
+
+.progress-track {
+  height: 5px;
+  background: #ededed;
+  border-radius: 20px;
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #e83c3c;
+  border-radius: 20px;
+}
+
+.stock-text {
+  font-size: 10px;
+  color: #777;
+}
+
+.add-cart-button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 5px;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  color: var(--primary-dark);
+  background: white;
+  font-size: 11px;
+  font-weight: 700;
+  transition: background .25s, color .25s;
+}
+
+.add-cart-button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* CATEGORY TILES */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.category-tile {
+  background: white;
+  border-radius: 9px;
+  padding: 20px 10px;
+  text-align: center;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.category-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px #0000000d;
+}
+
+.category-tile i {
+  font-size: 29px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.category-tile h3 {
+  font-size: 12px;
+}
+
+/* GENERAL PRODUCTS */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.regular-product {
+  border-radius: 8px;
+}
+
+/* PROMO BANNER */
+
+.promo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: linear-gradient(110deg, #202124, #41444b);
+  color: white;
+  padding: 35px;
+  border-radius: 10px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+.promo-banner h2 {
+  font-size: 25px;
+  line-height: 1.3;
+  margin: 8px 0;
+}
+
+.promo-banner p {
+  color: #ddd;
+  font-size: 13px;
+}
+
+.promo-banner .eyebrow {
+  color: #ffc27f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #202124;
+  color: white;
+  margin-top: 40px;
+  padding: 40px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.footer-column h3 {
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+
+.footer-column p,
+.footer-column a {
+  display: block;
+  font-size: 12px;
+  color: #c4c4c4;
+  margin-bottom: 8px;
+}
+
+.footer-column a:hover {
+  color: #ffb56c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #414141;
+  padding-top: 18px;
+  text-align: center;
+  font-size: 11px;
+  color: #aaa;
+}
+
+/* TOAST */
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3000;
+  background: #202124;
+  color: white;
+  padding: 13px 18px;
+  border-radius: 7px;
+  font-size: 13px;
+  box-shadow: 0 8px 30px #0003;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity .3s, transform .3s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .65s, transform .65s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .hero-grid {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+
+  .promo-panel {
+    display: none;
+  }
+
+  .flash-products,
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header-main {
+    gap: 15px;
+  }
+
+  .header-actions {
+    gap: 12px;
+  }
+
+  .header-action span.label {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .top-bar-content {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-main {
+    min-height: auto;
+    padding: 13px 0;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .header-actions {
+    margin-left: auto;
+    gap: 14px;
+  }
+
+  .search-box {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .nav-bar.open {
+    display: block;
+  }
+
+  .nav-content {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+  }
+
+  .nav-content a {
+    padding: 10px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-panel {
+    display: none;
+  }
+
+  .hero-banner {
+    min-height: 310px;
+  }
+
+  .hero-copy {
+    padding: 22px;
+    max-width: 67%;
+  }
+
+  .hero-copy h1 {
+    font-size: 27px;
+  }
+
+  .hero-image {
+    width: 43%;
+    height: 80%;
+  }
+
+  .flash-products,
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-image {
+    height: 145px;
+  }
+
+  .section-heading {
+    flex-wrap: wrap;
+    padding: 14px;
+  }
+
+  .section-heading h2 {
+    font-size: 17px;
+  }
+
+  .countdown {
+    font-size: 10px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .category-tile {
+    padding: 15px 5px;
+  }
+
+  .benefits {
+    gap: 8px;
+  }
+
+  .benefit {
+    padding: 12px 8px;
+    gap: 8px;
+  }
+
+  .benefit i {
+    font-size: 19px;
+  }
+
+  .promo-banner {
+    padding: 25px 18px;
+  }
+
+  .promo-banner h2 {
+    font-size: 21px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 15px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-actions {
+    gap: 10px;
+  }
+
+  .header-action i {
+    font-size: 17px;
+  }
+
+  .product-image {
+    height: 125px;
+  }
+
+  .product-price {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container top-bar-content">
+    <span><i class="fa-solid fa-truck-fast"></i> Great deals delivered to your doorstep</span>
+    <span>Need help? <a href="contact.html">Contact NaijaMart</a></span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-main">
+
+    <button class="mobile-menu-button" id="mobileMenuButton"
+      aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <a href="index.html" class="logo">Naija<span>Mart</span></a>
+
+    <form class="search-box" id="searchForm">
+      <input type="search" id="searchInput"
+        placeholder="Search phones, laptops, fashion..."
+        aria-label="Search products">
+      <button type="submit" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+
+    <div class="header-actions">
+
+      <a href="account.html" class="header-action">
+        <i class="fa-regular fa-user"></i>
+        <span class="label">Account</span>
+      </a>
+
+      <a href="wishlist.html" class="header-action">
+        <span class="badge" id="wishlistBadge">0</span>
+        <i class="fa-regular fa-heart"></i>
+        <span class="label">Wishlist</span>
+      </a>
+
+      <a href="cart.html" class="header-action">
+        <span class="badge" id="cartBadge">0</span>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="label">Cart</span>
+      </a>
+
+    </div>
+  </div>
+
+  <nav class="nav-bar" id="navBar">
+    <div class="container nav-content">
+        
+      
+
+      <a href="index.html" class="active">Home</a>
+      <a href="index1.html" class="active">Category</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="orders.html">My Orders</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <aside class="category-panel">
+        <h3>Shop by Category</h3>
+
+        <a href="products.html?category=electronics">
+          <i class="fa-solid fa-mobile-screen"></i> Electronics
+        </a>
+
+        <a href="products.html?category=computers">
+          <i class="fa-solid fa-laptop"></i> Computers
+        </a>
+
+        <a href="products.html?category=fashion">
+          <i class="fa-solid fa-shirt"></i> Fashion
+        </a>
+
+        <a href="products.html?category=home">
+          <i class="fa-solid fa-couch"></i> Home & Living
+        </a>
+
+        <a href="products.html?category=beauty">
+          <i class="fa-solid fa-spa"></i> Beauty & Health
+        </a>
+
+        <a href="products.html?category=gaming">
+          <i class="fa-solid fa-gamepad"></i> Gaming
+        </a>
+
+        <a href="products.html?category=sports">
+          <i class="fa-solid fa-futbol"></i> Sports
+        </a>
+
+    
+      </aside>
+
+      <div class="hero-banner">
+        <div class="hero-copy">
+          <span class="eyebrow">The NaijaMart Mega Sale</span>
+
+          <h1>Big Deals.<br>Better Living.</h1>
+
+          <p>Discover great products at prices you'll love.</p>
+
+          <a href="products.html" class="primary-button">
+            Shop Now <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <img class="hero-image"
+          src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85"
+          alt="Wireless headphones"
+          onerror="this.style.display='none'">
+      </div>
+
+      <aside class="promo-panel">
+        <div class="promo-card">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Quick Delivery</h3>
+          <p>Convenient delivery options for your orders.</p>
+        </div>
+
+        <div class="promo-card orange">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Shop with Confidence</h3>
+          <p>Browse products and make informed choices.</p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="container benefits reveal">
+
+    <div class="benefit">
+      <i class="fa-solid fa-truck-fast"></i>
+      <div>
+        <h4>Delivery Options</h4>
+        <p>Convenient delivery choices</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <i class="fa-solid fa-lock"></i>
+      <div>
+        <h4>Secure Shopping</h4>
+        <p>Shop with confidence</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <i class="fa-solid fa-tags"></i>
+      <div>
+        <h4>Great Deals</h4>
+        <p>Discover special offers</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <i class="fa-solid fa-headset"></i>
+      <div>
+        <h4>Customer Support</h4>
+        <p>We're here to help</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FLASH SALES -->
+  <section class="container section flash-section reveal">
+
+    <div class="section-heading flash-heading">
+      <div>
+        <h2><i class="fa-solid fa-bolt"></i> Flash Sales</h2>
+        <p>Explore these featured deals.</p>
+      </div>
+
+      <div class="countdown">
+        <span id="hours">05</span> :
+        <span id="minutes">30</span> :
+        <span id="seconds">00</span>
+      </div>
+
+      <a href="products.html?sale=flash" class="view-all">
+        See All <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="flash-products" id="flashProducts">
+
+      <!-- Product 1 -->
+      <article class="product-card"
+        data-id="phone-001"
+        data-name="Premium Smartphone 256GB"
+        data-price="850000"
+        data-image="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80">
+
+        <span class="discount-tag">-15%</span>
+
+        <a href="product.html?id=phone-001" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80"
+            alt="Premium smartphone"
+            loading="lazy">
+        </a>
+
+        <a href="product.html?id=phone-001" class="product-name product-link">
+          Premium Smartphone 256GB
+        </a>
+
+        <div class="product-price">₦850,000</div>
+        <div class="old-price">₦1,000,000</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span>(24 reviews)</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" style="width:70%"></div>
+        </div>
+
+        <p class="stock-text">Popular deal</p>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card"
+        data-id="headphones-002"
+        data-name="Wireless Noise Cancelling Headphones"
+        data-price="280000"
+        data-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80">
+
+        <span class="discount-tag">-20%</span>
+
+        <a href="product.html?id=headphones-002" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+            alt="Wireless headphones"
+            loading="lazy">
+        </a>
+
+        <a href="product.html?id=headphones-002" class="product-name product-link">
+          Wireless Noise Cancelling Headphones
+        </a>
+
+        <div class="product-price">₦280,000</div>
+        <div class="old-price">₦350,000</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span>(18 reviews)</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" style="width:55%"></div>
+        </div>
+
+        <p class="stock-text">Popular deal</p>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card"
+        data-id="sneakers-003"
+        data-name="Premium Sport Sneakers"
+        data-price="75000"
+        data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80">
+
+        <span class="discount-tag">-25%</span>
+
+        <a href="product.html?id=sneakers-003" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+            alt="Sport sneakers"
+            loading="lazy">
+        </a>
+
+        <a href="product.html?id=sneakers-003" class="product-name product-link">
+          Premium Sport Sneakers
+        </a>
+
+        <div class="product-price">₦75,000</div>
+        <div class="old-price">₦100,000</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★☆</span>
+          <span>(12 reviews)</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" style="width:45%"></div>
+        </div>
+
+        <p class="stock-text">Popular deal</p>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card"
+        data-id="watch-004"
+        data-name="Smart Fitness Watch"
+        data-price="95000"
+        data-image="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80">
+
+        <span class="discount-tag">-20%</span>
+
+        <a href="product.html?id=watch-004" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+            alt="Smart fitness watch"
+            loading="lazy">
+        </a>
+
+        <a href="product.html?id=watch-004" class="product-name product-link">
+          Smart Fitness Watch
+        </a>
+
+        <div class="product-price">₦95,000</div>
+        <div class="old-price">₦118,750</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span>(31 reviews)</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" style="width:65%"></div>
+        </div>
+
+        <p class="stock-text">Popular deal</p>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+      <!-- Product 5 -->
+      <article class="product-card"
+        data-id="laptop-005"
+        data-name="Modern Laptop"
+        data-price="1200000"
+        data-image="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80">
+
+        <span class="discount-tag">-10%</span>
+
+        <a href="product.html?id=laptop-005" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80"
+            alt="Modern laptop computer"
+            loading="lazy">
+        </a>
+
+        <a href="product.html?id=laptop-005" class="product-name product-link">
+          Modern Laptop
+        </a>
+
+        <div class="product-price">₦1,200,000</div>
+        <div class="old-price">₦1,333,333</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span>(16 reviews)</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" style="width:35%"></div>
+        </div>
+
+        <p class="stock-text">Popular deal</p>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="container section reveal">
+    <div class="section-heading">
+      <div>
+        <h2>Explore Categories</h2>
+        <p>Find something you'll love.</p>
+      </div>
+      <a href="categories.html" class="view-all">All Categories →</a>
+    </div>
+
+    <div class="category-grid">
+
+      <a href="products.html?category=electronics" class="category-tile">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <h3>Electronics</h3>
+      </a>
+
+      <a href="products.html?category=fashion" class="category-tile">
+        <i class="fa-solid fa-shirt"></i>
+        <h3>Fashion</h3>
+      </a>
+
+      <a href="products.html?category=computers" class="category-tile">
+        <i class="fa-solid fa-laptop"></i>
+        <h3>Computers</h3>
+      </a>
+
+      <a href="products.html?category=home" class="category-tile">
+        <i class="fa-solid fa-couch"></i>
+        <h3>Home & Living</h3>
+      </a>
+
+      <a href="products.html?category=beauty" class="category-tile">
+        <i class="fa-solid fa-spa"></i>
+        <h3>Beauty</h3>
+      </a>
+
+      <a href="products.html?category=sports" class="category-tile">
+        <i class="fa-solid fa-dumbbell"></i>
+        <h3>Sports</h3>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="container section reveal">
+
+    <div class="section-heading">
+      <div>
+        <h2>Popular Products</h2>
+        <p>Browse more of our featured items.</p>
+      </div>
+
+      <a href="products.html" class="view-all">
+        View All Products →
+      </a>
+    </div>
+
+    <div class="product-grid">
+
+      <article class="product-card regular-product"
+        data-id="camera-006"
+        data-name="Digital Camera"
+        data-price="450000"
+        data-image="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80">
+
+        <a href="product.html?id=camera-006" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80"
+            alt="Digital camera" loading="lazy">
+        </a>
+
+        <a href="product.html?id=camera-006" class="product-name product-link">
+          Digital Camera
+        </a>
+
+        <div class="product-price">₦450,000</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span>Featured</span>
+        </div>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+      <article class="product-card regular-product"
+        data-id="backpack-007"
+        data-name="Travel Backpack"
+        data-price="45000"
+        data-image="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80">
+
+        <a href="product.html?id=backpack-007" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+            alt="Travel backpack" loading="lazy">
+        </a>
+
+        <a href="product.html?id=backpack-007" class="product-name product-link">
+          Travel Backpack
+        </a>
+
+        <div class="product-price">₦45,000</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★☆</span>
+          <span>Featured</span>
+        </div>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+      <article class="product-card regular-product"
+        data-id="speaker-008"
+        data-name="Portable Bluetooth Speaker"
+        data-price="65000"
+        data-image="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80">
+
+        <a href="product.html?id=speaker-008" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80"
+            alt="Portable Bluetooth speaker" loading="lazy">
+        </a>
+
+        <a href="product.html?id=speaker-008" class="product-name product-link">
+          Portable Bluetooth Speaker
+        </a>
+
+        <div class="product-price">₦65,000</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span>Featured</span>
+        </div>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+      <article class="product-card regular-product"
+        data-id="sunglasses-009"
+        data-name="Fashion Sunglasses"
+        data-price="18000"
+        data-image="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80">
+
+        <a href="product.html?id=sunglasses-009" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80"
+            alt="Fashion sunglasses" loading="lazy">
+        </a>
+
+        <a href="product.html?id=sunglasses-009" class="product-name product-link">
+          Fashion Sunglasses
+        </a>
+
+        <div class="product-price">₦18,000</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★☆</span>
+          <span>Featured</span>
+        </div>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+      <article class="product-card regular-product"
+        data-id="chair-010"
+        data-name="Modern Lounge Chair"
+        data-price="180000"
+        data-image="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80">
+
+        <a href="product.html?id=chair-010" class="product-image-link product-link">
+          <img class="product-image"
+            src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80"
+            alt="Modern lounge chair" loading="lazy">
+        </a>
+
+        <a href="product.html?id=chair-010" class="product-name product-link">
+          Modern Lounge Chair
+        </a>
+
+        <div class="product-price">₦180,000</div>
+
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span>Featured</span>
+        </div>
+
+        <button class="add-cart-button">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PROMOTION -->
+  <section class="container promo-banner reveal">
+    <div>
+      <span class="eyebrow">Your next great find awaits</span>
+      <h2>Discover More on NaijaMart</h2>
+      <p>Explore our collection and find products for your everyday needs.</p>
+    </div>
+
+    <a href="products.html" class="primary-button">
+      Explore Products <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-column footer-brand">
+        <a href="index.html" class="logo">Naija<span>Mart</span></a>
+        <p style="margin-top:15px;max-width:300px">
+          Discover electronics, fashion, home essentials and more in one place.
+        </p>
+
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          support@naijamart.example
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="products.html">Products</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Customer Service</h3>
+        <a href="contact.html">Contact Us</a>
+        <a href="orders.html">My Orders</a>
+        <a href="account.html">My Account</a>
+        <a href="wishlist.html">Wishlist</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Shopping</h3>
+        <a href="categories.html">Categories</a>
+        <a href="cart.html">Shopping Cart</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="login.html">Checkout</a>
+        <a href="register.html">Checkout</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> NaijaMart. All rights reserved.
+      <br>Demo marketplace — sample product listings and prices.
+    </div>
+
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ----------------------------------
+   NAijaMART HOME PAGE JAVASCRIPT
+---------------------------------- */
+
+const money = amount =>
+  new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    maximumFractionDigits: 0
+  }).format(amount);
+
+function readStorage(key, fallback = []) {
+  try {
+    const data = JSON.parse(localStorage.getItem(key));
+    return Array.isArray(data) ? data : fallback;
+  } catch (error) {
+    return fallback;
+  }
+}
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(showToast.timer);
+
+  showToast.timer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2500);
+}
+
+/* MOBILE NAVIGATION */
+
+const mobileMenuButton = document.getElementById("mobileMenuButton");
+const navBar = document.getElementById("navBar");
+
+mobileMenuButton.addEventListener("click", () => {
+  const isOpen = navBar.classList.toggle("open");
+
+  mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
+
+  mobileMenuButton.innerHTML = isOpen
+    ? '<i class="fa-solid fa-xmark"></i>'
+    : '<i class="fa-solid fa-bars"></i>';
+});
+
+/* SEARCH */
+
+document.getElementById("searchForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const searchTerm = document.getElementById("searchInput").value.trim();
+
+  if (!searchTerm) {
+    showToast("Please enter a product name.");
+    return;
+  }
+
+  window.location.href =
+    "products.html?search=" + encodeURIComponent(searchTerm);
+});
+
+/* PRODUCT DETAILS LINKS
+   Each product card points to product.html?id=PRODUCT_ID.
+   The details page must read that ID and load the matching product.
+*/
+
+/* SHOPPING CART */
+
+function getCart() {
+  return readStorage("naijamartCart");
+}
+
+function saveCart(cart) {
+  localStorage.setItem("naijamartCart", JSON.stringify(cart));
+  updateBadges();
+}
+
+function addToCart(product) {
+  const cart = getCart();
+
+  const existing = cart.find(item => String(item.id) === String(product.id));
+
+  if (existing) {
+    existing.quantity = Number(existing.quantity || 1) + 1;
+  } else {
+    cart.push({
+      ...product,
+      quantity: 1
+    });
+  }
+
+  saveCart(cart);
+  showToast(product.name + " added to your cart!");
+}
+
+document.querySelectorAll(".add-cart-button").forEach(button => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".product-card");
+
+    const product = {
+      id: card.dataset.id,
+      name: card.dataset.name,
+      price: Number(card.dataset.price),
+      image: card.dataset.image
+    };
+
+    addToCart(product);
+  });
+});
+
+/* CART AND WISHLIST BADGES */
+
+function updateBadges() {
+  const cart = getCart();
+
+  const cartCount = cart.reduce(
+    (total, item) => total + Math.max(0, Number(item.quantity) || 0),
+    0
+  );
+
+  document.getElementById("cartBadge").textContent = cartCount;
+
+  const wishlist = readStorage("naijamartWishlist");
+
+  document.getElementById("wishlistBadge").textContent = wishlist.length;
+}
+
+updateBadges();
+
+/* FLASH SALES COUNTDOWN
+   This is a visual demonstration, not a live sale timer.
+*/
+
+let remainingSeconds = (5 * 60 * 60) + (30 * 60);
+
+function updateCountdown() {
+  const hours = Math.floor(remainingSeconds / 3600);
+  const minutes = Math.floor((remainingSeconds % 3600) / 60);
+  const seconds = remainingSeconds % 60;
+
+  document.getElementById("hours").textContent =
+    String(hours).padStart(2, "0");
+
+  document.getElementById("minutes").textContent =
+    String(minutes).padStart(2, "0");
+
+  document.getElementById("seconds").textContent =
+    String(seconds).padStart(2, "0");
+
+  if (remainingSeconds > 0) {
+    remainingSeconds--;
+  }
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* SCROLL REVEAL ANIMATIONS */
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+  revealObserver.observe(element);
+});
+
+/* IMAGE FALLBACK
+   If a remote image fails to load, show a neutral placeholder.
+*/
+
+document.querySelectorAll(".product-image, .hero-image").forEach(img => {
+  img.addEventListener("error", () => {
+    if (img.dataset.fallbackApplied) return;
+
+    img.dataset.fallbackApplied = "true";
+    img.alt = "Product image unavailable";
+    img.src =
+      "https://placehold.co/600x450/f5f5f5/666666?text=Image+Unavailable";
+  });
+});
+
+/* FOOTER YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>

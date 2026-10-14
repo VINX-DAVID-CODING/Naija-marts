@@ -1,0 +1,1292 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Create Account | NaijaMart</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --orange: #ff6b00;
+        --orange-dark: #e85d00;
+        --black: #171717;
+        --gray: #777;
+        --light: #f7f7f7;
+        --white: #fff;
+        --border: #e8e8e8;
+        --green: #15803d;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        color: var(--black);
+        background: var(--light);
+        min-height: 100vh;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    input, button {
+        font: inherit;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    /* ANNOUNCEMENT */
+
+    .announcement {
+        background: var(--black);
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .announcement span {
+        color: #ff9b50;
+        font-weight: 800;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+        background: white;
+        border-bottom: 1px solid var(--border);
+        padding: 17px 6%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .logo {
+        font-family: "Poppins", sans-serif;
+        font-size: 29px;
+        font-weight: 800;
+        letter-spacing: -1.5px;
+    }
+
+    .logo span {
+        color: var(--orange);
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        font-weight: 700;
+        color: #444;
+        transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+        color: var(--orange);
+    }
+
+    .nav-button {
+        background: var(--orange);
+        color: white;
+        border-radius: 8px;
+        padding: 12px 17px;
+        font-size: 12px;
+        font-weight: 800;
+        transition: 0.25s;
+    }
+
+    .nav-button:hover {
+        background: var(--orange-dark);
+        transform: translateY(-2px);
+    }
+
+    /* MAIN */
+
+    .main {
+        max-width: 1180px;
+        margin: 42px auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    /* IMAGE PANEL */
+
+    .image-panel {
+        min-height: 760px;
+        border-radius: 24px;
+        position: relative;
+        overflow: hidden;
+        background: #33251c;
+        animation: slideLeft 0.8s ease both;
+        isolation: isolate;
+    }
+
+    .main-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+        transition: transform 1s ease;
+    }
+
+    .image-panel:hover .main-image {
+        transform: scale(1.06);
+    }
+
+    .image-panel::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(15, 15, 15, 0.03) 10%,
+            rgba(15, 15, 15, 0.25) 40%,
+            rgba(15, 15, 15, 0.92) 100%
+        );
+        z-index: -1;
+    }
+
+    .image-content {
+        position: absolute;
+        left: 35px;
+        right: 35px;
+        bottom: 35px;
+        color: white;
+    }
+
+    .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 13px;
+        background: #ff6b0025;
+        border: 1px solid #ffb47e80;
+        border-radius: 50px;
+        color: #ffbd8d;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .tag-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #ff8b3d;
+    }
+
+    .image-content h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(35px, 4vw, 49px);
+        line-height: 1.16;
+        letter-spacing: -1.7px;
+        margin-bottom: 17px;
+    }
+
+    .image-content h1 span {
+        color: #ff9a53;
+    }
+
+    .image-content > p {
+        font-size: 13px;
+        line-height: 1.9;
+        color: #e6e1dc;
+        max-width: 390px;
+    }
+
+    .benefits {
+        display: grid;
+        gap: 14px;
+        margin-top: 27px;
+    }
+
+    .benefit {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .benefit-icon {
+        width: 37px;
+        height: 37px;
+        display: grid;
+        place-items: center;
+        border-radius: 11px;
+        background: #ffffff18;
+        border: 1px solid #ffffff35;
+        font-size: 17px;
+    }
+
+    /* FORM PANEL */
+
+    .form-panel {
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 24px;
+        padding: 38px;
+        box-shadow: 0 18px 55px #00000006;
+        animation: slideRight 0.8s ease both;
+    }
+
+    .brand-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--orange);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        margin-bottom: 22px;
+    }
+
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        border-radius: 11px;
+        background: #fff0e5;
+        font-size: 19px;
+    }
+
+    .form-heading h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 30px;
+        letter-spacing: -1px;
+        margin-bottom: 9px;
+    }
+
+    .form-heading p {
+        color: var(--gray);
+        font-size: 12px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .form-heading a {
+        color: var(--orange);
+        font-weight: 800;
+    }
+
+    .form-heading a:hover {
+        text-decoration: underline;
+    }
+
+    /* INPUTS */
+
+    .form-group {
+        margin-bottom: 17px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 11px;
+        font-weight: 800;
+    }
+
+    .input-wrap {
+        position: relative;
+    }
+
+    .input-wrap input {
+        width: 100%;
+        height: 48px;
+        border: 1px solid #e4e4e4;
+        border-radius: 9px;
+        padding: 0 43px 0 42px;
+        background: #fcfcfc;
+        outline: none;
+        font-size: 12px;
+        color: var(--black);
+        transition: 0.25s;
+    }
+
+    .input-wrap input::placeholder {
+        color: #aaa;
+    }
+
+    .input-wrap input:focus {
+        background: white;
+        border-color: var(--orange);
+        box-shadow: 0 0 0 4px #ff6b0014;
+    }
+
+    .field-icon {
+        position: absolute;
+        top: 50%;
+        left: 14px;
+        transform: translateY(-50%);
+        color: #888;
+        font-size: 15px;
+        pointer-events: none;
+    }
+
+    .show-password {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 16px;
+        padding: 4px;
+        color: #777;
+    }
+
+    .show-password:hover {
+        color: var(--orange);
+    }
+
+    .field-hint {
+        color: #888;
+        font-size: 10px;
+        margin-top: 7px;
+        line-height: 1.6;
+    }
+
+    /* PASSWORD STRENGTH */
+
+    .strength-track {
+        height: 4px;
+        background: #eee;
+        border-radius: 10px;
+        margin-top: 9px;
+        overflow: hidden;
+    }
+
+    .strength-fill {
+        height: 100%;
+        width: 0;
+        border-radius: 10px;
+        transition: width 0.3s, background 0.3s;
+    }
+
+    .strength-label {
+        font-size: 10px;
+        color: #888;
+        margin-top: 6px;
+    }
+
+    /* TERMS */
+
+    .terms {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        margin: 22px 0;
+        font-size: 10px;
+        color: #666;
+        line-height: 1.8;
+    }
+
+    .terms input {
+        margin-top: 4px;
+        accent-color: var(--orange);
+        flex-shrink: 0;
+    }
+
+    .terms a {
+        color: var(--orange);
+        font-weight: 800;
+    }
+
+    /* BUTTON */
+
+    .submit-button {
+        width: 100%;
+        min-height: 51px;
+        border: none;
+        border-radius: 10px;
+        background: var(--orange);
+        color: white;
+        font-size: 12px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: 0.25s;
+    }
+
+    .submit-button:hover {
+        background: var(--orange-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 9px 22px #ff6b0030;
+    }
+
+    .submit-button:active {
+        transform: scale(0.99);
+    }
+
+    .submit-button:disabled {
+        opacity: 0.65;
+        cursor: wait;
+        transform: none;
+    }
+
+    /* BOTTOM LINK */
+
+    .bottom-text {
+        text-align: center;
+        color: #888;
+        font-size: 11px;
+        margin-top: 22px;
+    }
+
+    .bottom-text a {
+        color: var(--orange);
+        font-weight: 800;
+    }
+
+    .bottom-text a:hover {
+        text-decoration: underline;
+    }
+
+    .demo-warning {
+        background: #fff8f2;
+        border: 1px solid #ffe2cf;
+        border-radius: 9px;
+        padding: 12px;
+        margin-top: 16px;
+        font-size: 10px;
+        line-height: 1.7;
+        color: #79563e;
+    }
+
+    .demo-warning strong {
+        color: #b84b00;
+    }
+
+    /* FOOTER */
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        background: white;
+        border-top: 1px solid var(--border);
+        padding: 24px 6%;
+        color: #777;
+        font-size: 11px;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 19px;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+        color: var(--orange);
+    }
+
+    /* NOTIFICATION */
+
+    .toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        width: 340px;
+        max-width: calc(100% - 40px);
+        padding: 16px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 12px 40px #00000020;
+        border-left: 4px solid var(--green);
+        display: flex;
+        gap: 12px;
+        opacity: 0;
+        transform: translateX(120%);
+        transition: 0.4s;
+    }
+
+    .toast.show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .toast.error {
+        border-left-color: #d93025;
+    }
+
+    .toast-icon {
+        font-size: 18px;
+    }
+
+    .toast strong {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .toast p {
+        font-size: 11px;
+        color: #777;
+        line-height: 1.6;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes slideLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideRight {
+        from {
+            opacity: 0;
+            transform: translateX(25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* TABLETS */
+
+    @media (max-width: 900px) {
+        .navbar {
+            padding: 16px 4%;
+        }
+
+        .nav-links {
+            gap: 13px;
+        }
+
+        .nav-links a {
+            font-size: 10px;
+        }
+
+        .main {
+            gap: 18px;
+            padding: 0 17px;
+        }
+
+        .image-panel {
+            min-height: 720px;
+        }
+
+        .image-content {
+            left: 24px;
+            right: 24px;
+        }
+
+        .form-panel {
+            padding: 28px 23px;
+        }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+        .announcement {
+            font-size: 10px;
+        }
+
+        .navbar {
+            padding: 15px 5%;
+        }
+
+        .logo {
+            font-size: 25px;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .nav-button {
+            padding: 11px 13px;
+            font-size: 11px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 22px auto 30px;
+            padding: 0 13px;
+        }
+
+        .image-panel {
+            min-height: 340px;
+            border-radius: 18px;
+        }
+
+        .image-content {
+            left: 22px;
+            right: 22px;
+            bottom: 23px;
+        }
+
+        .image-content h1 {
+            font-size: 32px;
+        }
+
+        .image-content > p {
+            font-size: 11px;
+        }
+
+        .benefits {
+            gap: 9px;
+            margin-top: 17px;
+        }
+
+        .benefit {
+            font-size: 10px;
+        }
+
+        .benefit-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .form-panel {
+            padding: 27px 21px;
+            border-radius: 18px;
+        }
+
+        .form-heading h2 {
+            font-size: 27px;
+        }
+
+        footer {
+            padding: 22px 5%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer-links {
+            justify-content: center;
+            gap: 14px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            scroll-behavior: auto !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+</style>
+
+</head><body><!-- ANNOUNCEMENT -->
+<div class="announcement">
+    Join <span>NaijaMart</span> today and discover a better way to shop!
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        Naija<span>Mart.</span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+       <a href="index1.html">Category</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="login.html" class="nav-button">
+        Sign In →
+    </a>
+
+</header>
+
+<!-- MAIN -->
+<main class="main">
+
+    <!-- IMAGE SECTION -->
+    <section class="image-panel">
+
+        <img
+            class="main-image"
+            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1100&q=90"
+            alt="Stylish modern shopping store"
+        >
+
+        <div class="image-content">
+
+            <div class="tag">
+                <span class="tag-dot"></span>
+                Welcome to NaijaMart
+            </div>
+
+            <h1>
+                Your next favourite<br>
+                <span>thing is waiting.</span>
+            </h1>
+
+            <p>
+                Create your account and discover exciting products,
+                amazing deals, and a shopping experience designed
+                around you.
+            </p>
+
+            <div class="benefits">
+
+                <div class="benefit">
+                    <span class="benefit-icon">🛍️</span>
+                    Discover amazing products
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">❤️</span>
+                    Save your favourite items
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">📦</span>
+                    Keep track of your orders
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- REGISTRATION FORM -->
+    <section class="form-panel">
+
+        <div class="brand-label">
+            <span class="brand-icon">🛍️</span>
+            JOIN NAIJAMART
+        </div>
+
+        <div class="form-heading">
+
+            <h2>Create an account</h2>
+
+            <p>
+                Fill in your details to get started.
+                Already registered?
+                <a href="login.html">Sign in</a>
+            </p>
+
+        </div>
+
+        <form id="registerForm" novalidate>
+
+            <!-- FULL NAME -->
+            <div class="form-group">
+
+                <label for="fullName">Full name</label>
+
+                <div class="input-wrap">
+
+                    <span class="field-icon">👤</span>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        minlength="2"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+
+                <label for="email">Email address</label>
+
+                <div class="input-wrap">
+
+                    <span class="field-icon">✉️</span>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        maxlength="254"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- PHONE -->
+            <div class="form-group">
+
+                <label for="phone">Phone number</label>
+
+                <div class="input-wrap">
+
+                    <span class="field-icon">📱</span>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="e.g. 08012345678"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        maxlength="20"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+
+                <label for="password">Create password</label>
+
+                <div class="input-wrap">
+
+                    <span class="field-icon">🔒</span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="At least 8 characters"
+                        autocomplete="new-password"
+                        minlength="8"
+                        maxlength="128"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        data-target="password"
+                        aria-label="Show password"
+                        aria-pressed="false"
+                    >👁</button>
+
+                </div>
+
+                <div class="strength-track">
+                    <div class="strength-fill" id="strengthFill"></div>
+                </div>
+
+                <p class="strength-label" id="strengthLabel">
+                    Password strength will appear here.
+                </p>
+
+            </div>
+
+            <!-- CONFIRM PASSWORD -->
+            <div class="form-group">
+
+                <label for="confirmPassword">Confirm password</label>
+
+                <div class="input-wrap">
+
+                    <span class="field-icon">🔐</span>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Enter your password again"
+                        autocomplete="new-password"
+                        minlength="8"
+                        maxlength="128"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        data-target="confirmPassword"
+                        aria-label="Show confirmation password"
+                        aria-pressed="false"
+                    >👁</button>
+
+                </div>
+
+            </div>
+
+            <!-- TERMS -->
+            <label class="terms">
+
+                <input type="checkbox" id="terms" required>
+
+                <span>
+                    I agree to NaijaMart's
+                    <a href="terms.html">Terms and Conditions</a>
+                    and
+                    <a href="privacy.html">Privacy Policy</a>.
+                </span>
+
+            </label>
+
+            <!-- SUBMIT -->
+            <button type="submit" class="submit-button" id="submitButton">
+                <span>Create My Account</span>
+                <span>→</span>
+            </button>
+
+            <div class="demo-warning">
+                <strong>Registration demo:</strong>
+                This form validates your information but does not
+                create a real account. A secure backend is needed
+                to register and authenticate customers.
+            </div>
+
+        </form>
+
+        <p class="bottom-text">
+            Already have an account?
+            <a href="login.html">Sign in here</a>
+        </p>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © <span id="year"></span> NaijaMart. All rights reserved.
+    </p>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="services.html">Help Centre</a>
+    </div>
+
+</footer>
+
+<!-- NOTIFICATION -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+
+    <span class="toast-icon" id="toastIcon">✓</span>
+
+    <div>
+        <strong id="toastTitle">Notification</strong>
+        <p id="toastMessage">Message goes here.</p>
+    </div>
+
+</div>
+
+<script>
+    // ==========================================
+    // 1. SELECT HTML ELEMENTS
+    // ==========================================
+
+    const registerForm = document.getElementById("registerForm");
+
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const terms = document.getElementById("terms");
+
+    const strengthFill = document.getElementById("strengthFill");
+    const strengthLabel = document.getElementById("strengthLabel");
+
+    const toast = document.getElementById("toast");
+    const toastIcon = document.getElementById("toastIcon");
+    const toastTitle = document.getElementById("toastTitle");
+    const toastMessage = document.getElementById("toastMessage");
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    // ==========================================
+    // 2. SHOW AND HIDE PASSWORDS
+    // ==========================================
+
+    document.querySelectorAll(".show-password").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const input = document.getElementById(
+                button.dataset.target
+            );
+
+            const show = input.type === "password";
+
+            input.type = show ? "text" : "password";
+
+            button.textContent = show ? "🙈" : "👁";
+
+            button.setAttribute(
+                "aria-label",
+                show ? "Hide password" : "Show password"
+            );
+
+            button.setAttribute("aria-pressed", String(show));
+
+        });
+
+    });
+
+
+    // ==========================================
+    // 3. NOTIFICATION FUNCTION
+    // ==========================================
+
+    let toastTimer;
+
+    function showToast(title, message, type = "success") {
+
+        clearTimeout(toastTimer);
+
+        toastTitle.textContent = title;
+        toastMessage.textContent = message;
+
+        toastIcon.textContent =
+            type === "error" ? "⚠️" : "✓";
+
+        toast.classList.toggle("error", type === "error");
+        toast.classList.add("show");
+
+        toastTimer = setTimeout(function () {
+            toast.classList.remove("show");
+        }, 4500);
+
+    }
+
+
+    // ==========================================
+    // 4. PASSWORD STRENGTH INDICATOR
+    // ==========================================
+
+    password.addEventListener("input", function () {
+
+        const value = password.value;
+
+        let score = 0;
+
+        if (value.length >= 8) score++;
+        if (/[a-z]/.test(value) && /[A-Z]/.test(value)) score++;
+        if (/[0-9]/.test(value)) score++;
+        if (/[^a-zA-Z0-9]/.test(value)) score++;
+
+        const levels = [
+            {
+                width: "0%",
+                color: "#eeeeee",
+                label: "Password strength will appear here."
+            },
+            {
+                width: "25%",
+                color: "#dc2626",
+                label: "Weak password"
+            },
+            {
+                width: "50%",
+                color: "#f59e0b",
+                label: "Fair password"
+            },
+            {
+                width: "75%",
+                color: "#84cc16",
+                label: "Good password"
+            },
+            {
+                width: "100%",
+                color: "#16a34a",
+                label: "Strong password"
+            }
+        ];
+
+        // A short password cannot be strong.
+        if (value.length > 0 && value.length < 8) {
+            score = 1;
+        }
+
+        const level = value.length === 0 ? levels[0] : levels[score];
+
+        strengthFill.style.width = level.width;
+        strengthFill.style.background = level.color;
+        strengthLabel.textContent = level.label;
+
+    });
+
+
+    // ==========================================
+    // 5. REGISTRATION FORM VALIDATION
+    // ==========================================
+
+    registerForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const nameValue = fullName.value.trim();
+        const emailValue = email.value.trim();
+        const phoneValue = phone.value.trim();
+        const passwordValue = password.value;
+        const confirmValue = confirmPassword.value;
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Validate name.
+        if (nameValue.length < 2) {
+
+            showToast(
+                "Check your name",
+                "Please enter your full name.",
+                "error"
+            );
+
+            fullName.focus();
+            return;
+
+        }
+
+        // Validate email.
+        if (!emailPattern.test(emailValue)) {
+
+            showToast(
+                "Invalid email",
+                "Please enter a valid email address.",
+                "error"
+            );
+
+            email.focus();
+            return;
+
+        }
+
+        // Validate Nigerian or international phone input.
+        const digits = phoneValue.replace(/\D/g, "");
+
+        if (digits.length < 10 || digits.length > 15) {
+
+            showToast(
+                "Check your phone number",
+                "Please enter a valid phone number.",
+                "error"
+            );
+
+            phone.focus();
+            return;
+
+        }
+
+        // Validate password length.
+        if (passwordValue.length < 8) {
+
+            showToast(
+                "Password too short",
+                "Use at least 8 characters for your password.",
+                "error"
+            );
+
+            password.focus();
+            return;
+
+        }
+
+        // Validate password confirmation.
+        if (passwordValue !== confirmValue) {
+
+            showToast(
+                "Passwords do not match",
+                "Please enter the same password in both fields.",
+                "error"
+            );
+
+            confirmPassword.focus();
+            return;
+
+        }
+
+        // Validate terms checkbox.
+        if (!terms.checked) {
+
+            showToast(
+                "Agreement required",
+                "Please agree to the terms before continuing.",
+                "error"
+            );
+
+            terms.focus();
+            return;
+
+        }
+
+        // The information passes frontend validation.
+        // No account is created until a backend is connected.
+
+        showToast(
+            "Form completed!",
+            "Your details passed the checks. Connect a secure backend to create your account.",
+            "success"
+        );
+
+    });
+
+
+    // ==========================================
+    // 6. CLEAR INPUT ERROR FEEDBACK
+    // ==========================================
+
+    [fullName, email, phone, password, confirmPassword].forEach(
+        function (input) {
+
+            input.addEventListener("input", function () {
+                input.style.borderColor = "";
+            });
+
+        }
+    );
+
+</script>
+
+</body>
+</html>

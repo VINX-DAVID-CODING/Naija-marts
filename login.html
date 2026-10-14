@@ -1,0 +1,1245 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | NaijaMart</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --orange: #ff6b00;
+        --orange-dark: #e85d00;
+        --black: #151515;
+        --gray: #707070;
+        --light: #f7f7f7;
+        --white: #ffffff;
+        --border: #e8e8e8;
+        --green: #16834a;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        background: var(--light);
+        color: var(--black);
+        min-height: 100vh;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    button,
+    input {
+        font: inherit;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    /* ANNOUNCEMENT BAR */
+
+    .announcement {
+        background: var(--black);
+        color: white;
+        text-align: center;
+        padding: 10px 15px;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+    }
+
+    .announcement span {
+        color: #ff9b50;
+        font-weight: 800;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+        background: white;
+        border-bottom: 1px solid var(--border);
+        padding: 18px 6%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .logo {
+        font-family: "Poppins", sans-serif;
+        font-size: 29px;
+        font-weight: 800;
+        letter-spacing: -1.5px;
+    }
+
+    .logo span {
+        color: var(--orange);
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .nav-links a {
+        color: #444;
+        font-size: 13px;
+        font-weight: 600;
+        transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--orange);
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .home-btn {
+        background: var(--orange);
+        color: white;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 800;
+        transition: 0.25s ease;
+    }
+
+    .home-btn:hover {
+        background: var(--orange-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 7px 18px #ff6b0030;
+    }
+
+    /* MAIN LAYOUT */
+
+    .main {
+        max-width: 1180px;
+        min-height: 690px;
+        margin: 45px auto;
+        padding: 0 25px;
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        gap: 35px;
+        align-items: stretch;
+    }
+
+    /* LEFT IMAGE PANEL */
+
+    .visual-panel {
+        position: relative;
+        overflow: hidden;
+        min-height: 610px;
+        border-radius: 24px;
+        background: #2c211a;
+        animation: fadeInLeft 0.8s ease both;
+        isolation: isolate;
+    }
+
+    .visual-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(
+                180deg,
+                rgba(15, 15, 15, 0.02) 15%,
+                rgba(15, 15, 15, 0.35) 48%,
+                rgba(15, 15, 15, 0.94) 100%
+            );
+        z-index: 1;
+    }
+
+    .visual-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1s ease;
+        z-index: -1;
+    }
+
+    .visual-panel:hover .visual-image {
+        transform: scale(1.06);
+    }
+
+    .visual-content {
+        position: absolute;
+        z-index: 2;
+        left: 38px;
+        right: 38px;
+        bottom: 40px;
+        color: white;
+    }
+
+    .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #ff6b0025;
+        border: 1px solid #ff9b5070;
+        color: #ffb47e;
+        border-radius: 50px;
+        padding: 9px 14px;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .eyebrow-dot {
+        width: 7px;
+        height: 7px;
+        background: #ff8b3d;
+        border-radius: 50%;
+        box-shadow: 0 0 12px #ff6b00;
+    }
+
+    .visual-content h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(34px, 4vw, 49px);
+        line-height: 1.16;
+        letter-spacing: -1.8px;
+        margin-bottom: 16px;
+    }
+
+    .visual-content h1 span {
+        color: #ff9a53;
+    }
+
+    .visual-content > p {
+        max-width: 390px;
+        color: #e4e0dc;
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .benefits {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        margin-top: 27px;
+    }
+
+    .benefit {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 11px;
+        color: #f3efeb;
+        font-weight: 600;
+    }
+
+    .benefit-icon {
+        width: 33px;
+        height: 33px;
+        display: grid;
+        place-items: center;
+        background: #ffffff1a;
+        border: 1px solid #ffffff30;
+        border-radius: 10px;
+    }
+
+    /* LOGIN PANEL */
+
+    .form-panel {
+        background: white;
+        border: 1px solid #eeeeee;
+        border-radius: 24px;
+        padding: 45px 38px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0 18px 55px #00000006;
+        animation: fadeInRight 0.8s ease both;
+    }
+
+    .form-top {
+        margin-bottom: 30px;
+    }
+
+    .mini-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 28px;
+        color: var(--orange);
+        font-weight: 800;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+    }
+
+    .mini-logo-icon {
+        width: 37px;
+        height: 37px;
+        background: #fff0e5;
+        display: grid;
+        place-items: center;
+        border-radius: 11px;
+        font-size: 19px;
+    }
+
+    .form-top h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 31px;
+        letter-spacing: -1px;
+        margin-bottom: 10px;
+    }
+
+    .form-top p {
+        color: var(--gray);
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .form-top p a {
+        color: var(--orange);
+        font-weight: 800;
+    }
+
+    .form-top p a:hover {
+        text-decoration: underline;
+    }
+
+    /* INPUT FIELDS */
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .label-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 9px;
+    }
+
+    .label-row label {
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .forgot-link {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--orange);
+    }
+
+    .forgot-link:hover {
+        text-decoration: underline;
+    }
+
+    .input-wrap {
+        position: relative;
+    }
+
+    .input-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+        font-size: 16px;
+        pointer-events: none;
+    }
+
+    .input-wrap input {
+        width: 100%;
+        height: 51px;
+        border: 1px solid #e4e4e4;
+        border-radius: 10px;
+        padding: 0 48px 0 44px;
+        outline: none;
+        background: #fcfcfc;
+        font-size: 12px;
+        color: var(--black);
+        transition: border-color 0.25s, box-shadow 0.25s,
+                    background 0.25s;
+    }
+
+    .input-wrap input::placeholder {
+        color: #aaa;
+    }
+
+    .input-wrap input:hover {
+        border-color: #cfcfcf;
+    }
+
+    .input-wrap input:focus {
+        border-color: var(--orange);
+        background: white;
+        box-shadow: 0 0 0 4px #ff6b0014;
+    }
+
+    .input-wrap input:focus + .input-icon {
+        color: var(--orange);
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        color: #777;
+        font-size: 17px;
+        padding: 5px;
+    }
+
+    .toggle-password:hover {
+        color: var(--orange);
+    }
+
+    /* REMEMBER ME */
+
+    .options-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin: 3px 0 23px;
+    }
+
+    .remember {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #626262;
+        font-size: 11px;
+    }
+
+    .remember input {
+        accent-color: var(--orange);
+        width: 14px;
+        height: 14px;
+        cursor: pointer;
+    }
+
+    .secure-text {
+        font-size: 10px;
+        color: #777;
+    }
+
+    /* SUBMIT BUTTON */
+
+    .login-btn {
+        position: relative;
+        width: 100%;
+        min-height: 53px;
+        background: var(--orange);
+        border: none;
+        color: white;
+        border-radius: 10px;
+        font-weight: 800;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        overflow: hidden;
+        transition: transform 0.25s ease,
+                    background 0.25s ease,
+                    box-shadow 0.25s ease;
+    }
+
+    .login-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+            110deg,
+            transparent,
+            #ffffff45,
+            transparent
+        );
+        transform: skewX(-20deg);
+        transition: left 0.6s ease;
+    }
+
+    .login-btn:hover::before {
+        left: 140%;
+    }
+
+    .login-btn:hover {
+        background: var(--orange-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 9px 22px #ff6b0030;
+    }
+
+    .login-btn:active {
+        transform: scale(0.99);
+    }
+
+    .login-btn:disabled {
+        opacity: 0.7;
+        cursor: wait;
+        transform: none;
+    }
+
+    .demo-note {
+        margin-top: 14px;
+        padding: 12px;
+        border: 1px solid #ffe1cc;
+        background: #fff8f2;
+        border-radius: 9px;
+        color: #79563e;
+        font-size: 10px;
+        line-height: 1.8;
+    }
+
+    .demo-note strong {
+        color: #b84b00;
+    }
+
+    /* DIVIDER */
+
+    .divider {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: #999;
+        font-size: 10px;
+        margin: 26px 0 20px;
+    }
+
+    .divider::before,
+    .divider::after {
+        content: "";
+        height: 1px;
+        flex: 1;
+        background: #ededed;
+    }
+
+    /* REGISTER LINK */
+
+    .register-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 15px;
+        border: 1px solid #ededed;
+        border-radius: 10px;
+        background: #fdfdfd;
+        font-size: 11px;
+        color: #777;
+        transition: border-color 0.25s, background 0.25s;
+    }
+
+    .register-box:hover {
+        border-color: #ffc59e;
+        background: #fffaf6;
+    }
+
+    .register-box a {
+        color: var(--orange);
+        font-weight: 800;
+    }
+
+    /* FOOTER */
+
+    footer {
+        background: white;
+        border-top: 1px solid var(--border);
+        padding: 23px 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        color: #777;
+        font-size: 11px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footer-links a {
+        transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+        color: var(--orange);
+    }
+
+    /* NOTIFICATION */
+
+    .toast {
+        position: fixed;
+        z-index: 100;
+        right: 25px;
+        top: 25px;
+        max-width: calc(100% - 40px);
+        width: 350px;
+        padding: 16px 18px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 15px 45px #0000001a;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        border-left: 4px solid var(--green);
+        transform: translateX(130%);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .toast.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .toast.error {
+        border-left-color: #d93025;
+    }
+
+    .toast-icon {
+        font-size: 19px;
+    }
+
+    .toast strong {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .toast p {
+        color: #777;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* TABLETS */
+
+    @media (max-width: 900px) {
+        .navbar {
+            padding: 17px 4%;
+        }
+
+        .nav-links {
+            gap: 15px;
+        }
+
+        .nav-links a {
+            font-size: 11px;
+        }
+
+        .main {
+            gap: 20px;
+            padding: 0 18px;
+            margin: 30px auto;
+        }
+
+        .visual-panel {
+            min-height: 590px;
+        }
+
+        .visual-content {
+            left: 25px;
+            right: 25px;
+            bottom: 30px;
+        }
+
+        .form-panel {
+            padding: 35px 25px;
+        }
+
+        .benefits {
+            gap: 12px;
+        }
+    }
+
+    /* MOBILE PHONES */
+
+    @media (max-width: 650px) {
+        .announcement {
+            font-size: 10px;
+        }
+
+        .navbar {
+            padding: 15px 5%;
+        }
+
+        .logo {
+            font-size: 25px;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .home-btn {
+            padding: 11px 13px;
+            font-size: 11px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            padding: 0 14px;
+            margin: 22px auto 30px;
+            gap: 18px;
+        }
+
+        .visual-panel {
+            min-height: 310px;
+            border-radius: 18px;
+        }
+
+        .visual-content {
+            left: 23px;
+            right: 23px;
+            bottom: 23px;
+        }
+
+        .visual-content h1 {
+            font-size: 31px;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .visual-content > p {
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .eyebrow {
+            padding: 7px 11px;
+            font-size: 9px;
+            margin-bottom: 12px;
+        }
+
+        .benefits {
+            margin-top: 17px;
+        }
+
+        .benefit {
+            font-size: 10px;
+        }
+
+        .benefit-icon {
+            width: 29px;
+            height: 29px;
+        }
+
+        .form-panel {
+            border-radius: 18px;
+            padding: 30px 22px;
+        }
+
+        .form-top {
+            margin-bottom: 25px;
+        }
+
+        .mini-logo {
+            margin-bottom: 20px;
+        }
+
+        .form-top h2 {
+            font-size: 27px;
+        }
+
+        .secure-text {
+            font-size: 9px;
+        }
+
+        footer {
+            padding: 22px 5%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer-links {
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .toast {
+            right: 12px;
+            top: 12px;
+            width: calc(100% - 24px);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            scroll-behavior: auto !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+</style>
+
+</head><body><!-- ANNOUNCEMENT BAR -->
+<div class="announcement">
+    Welcome to <span>NaijaMart</span> — Your shopping, your way!
+</div>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        Naija<span>Mart.</span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+     <li><a href="index1.html">Category</a></li>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+        <a href="index.html" class="home-btn">← Back to Shop</a>
+    </div>
+
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+    <!-- LEFT IMAGE SECTION -->
+    <section class="visual-panel">
+
+        <img
+            class="visual-image"
+            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1100&q=90"
+            alt="Beautiful modern fashion and shopping store"
+        >
+
+        <div class="visual-content">
+
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                Your favourite marketplace
+            </div>
+
+            <h1>
+                Everything you love.<br>
+                <span>One account.</span>
+            </h1>
+
+            <p>
+                Welcome back to NaijaMart. Discover amazing products,
+                explore exciting deals, and enjoy a convenient
+                shopping experience.
+            </p>
+
+            <div class="benefits">
+
+                <div class="benefit">
+                    <span class="benefit-icon">🛍️</span>
+                    Shop easily
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">❤️</span>
+                    Save favourites
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">📦</span>
+                    Track orders
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RIGHT LOGIN FORM -->
+    <section class="form-panel">
+
+        <div class="form-top">
+
+            <div class="mini-logo">
+                <span class="mini-logo-icon">🛍️</span>
+                NAIJAMART ACCOUNT
+            </div>
+
+            <h2>Welcome back!</h2>
+
+            <p>
+                Enter your details to continue shopping.
+                New to NaijaMart?
+                <a href="register.html">Create an account</a>
+            </p>
+
+        </div>
+
+        <form id="loginForm" novalidate>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+
+                <div class="label-row">
+                    <label for="email">Email address</label>
+                </div>
+
+                <div class="input-wrap">
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <span class="input-icon">✉</span>
+
+                </div>
+
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+
+                <div class="label-row">
+                    <label for="password">Password</label>
+
+                    <a href="forgot-password.html" class="forgot-link">
+                        Forgot password?
+                    </a>
+                </div>
+
+                <div class="input-wrap">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <span class="input-icon">🔒</span>
+
+                    <button
+                        type="button"
+                        class="toggle-password"
+                        id="togglePassword"
+                        aria-label="Show password"
+                        aria-pressed="false"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- REMEMBER ME -->
+            <div class="options-row">
+
+                <label class="remember">
+                    <input type="checkbox" id="remember">
+                    Remember my email
+                </label>
+
+                <span class="secure-text">🔐 Secure connection</span>
+
+            </div>
+
+            <!-- LOGIN BUTTON -->
+            <button type="submit" class="login-btn" id="loginButton">
+                <span>Sign In to Your Account</span>
+                <span>→</span>
+            </button>
+
+            <div class="demo-note">
+                <strong>Demo page:</strong> This form currently checks
+                the fields but does not authenticate an account.
+                Connect a backend before using it for real customers.
+            </div>
+
+        </form>
+
+        <div class="divider">NEW TO NAIJAMART?</div>
+
+        <a href="register.html" class="register-box">
+            Don't have an account?
+            <span style="color: var(--orange); font-weight: 800;">
+                Create one free →
+            </span>
+        </a>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © <span id="currentYear"></span> NaijaMart.
+        All rights reserved.
+    </p>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="services.html">Help Centre</a>
+    </div>
+
+</footer>
+
+<!-- NOTIFICATION -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+
+    <span class="toast-icon" id="toastIcon">✓</span>
+
+    <div>
+        <strong id="toastTitle">Notification</strong>
+        <p id="toastMessage">Message goes here.</p>
+    </div>
+
+</div>
+
+<script>
+    // ==========================================
+    // 1. SELECT HTML ELEMENTS
+    // ==========================================
+
+    const loginForm = document.getElementById("loginForm");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+    const loginButton = document.getElementById("loginButton");
+
+    const toast = document.getElementById("toast");
+    const toastIcon = document.getElementById("toastIcon");
+    const toastTitle = document.getElementById("toastTitle");
+    const toastMessage = document.getElementById("toastMessage");
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+
+    // ==========================================
+    // 2. SHOW OR HIDE PASSWORD
+    // ==========================================
+
+    togglePassword.addEventListener("click", function () {
+
+        const isHidden = passwordInput.type === "password";
+
+        passwordInput.type = isHidden ? "text" : "password";
+
+        togglePassword.textContent = isHidden ? "🙈" : "👁";
+
+        togglePassword.setAttribute(
+            "aria-label",
+            isHidden ? "Hide password" : "Show password"
+        );
+
+        togglePassword.setAttribute(
+            "aria-pressed",
+            String(isHidden)
+        );
+
+    });
+
+
+    // ==========================================
+    // 3. NOTIFICATION FUNCTION
+    // ==========================================
+
+    let toastTimer;
+
+    function showToast(title, message, type = "success") {
+
+        clearTimeout(toastTimer);
+
+        toastTitle.textContent = title;
+        toastMessage.textContent = message;
+        toastIcon.textContent = type === "error" ? "⚠️" : "✓";
+
+        toast.classList.toggle("error", type === "error");
+        toast.classList.add("show");
+
+        toastTimer = setTimeout(function () {
+            toast.classList.remove("show");
+        }, 4000);
+
+    }
+
+
+    // ==========================================
+    // 4. RESTORE REMEMBERED EMAIL
+    // ==========================================
+
+    // Only the email is remembered, never the password.
+    try {
+
+        const rememberedEmail =
+            localStorage.getItem("naijamartRememberedEmail");
+
+        if (rememberedEmail) {
+            emailInput.value = rememberedEmail;
+            document.getElementById("remember").checked = true;
+        }
+
+    } catch (error) {
+
+        // The page can still work if browser storage is unavailable.
+        console.warn("Browser storage is unavailable.");
+
+    }
+
+
+    // ==========================================
+    // 5. HANDLE LOGIN FORM
+    // ==========================================
+
+    loginForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        // Check whether the email looks valid.
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email || !emailPattern.test(email)) {
+
+            showToast(
+                "Check your email",
+                "Please enter a valid email address.",
+                "error"
+            );
+
+            emailInput.focus();
+            return;
+
+        }
+
+        // Check that the password field is not empty.
+        if (!password.trim()) {
+
+            showToast(
+                "Password required",
+                "Please enter your password.",
+                "error"
+            );
+
+            passwordInput.focus();
+            return;
+
+        }
+
+        // Remember the email only if requested.
+        try {
+
+            if (document.getElementById("remember").checked) {
+
+                localStorage.setItem(
+                    "naijamartRememberedEmail",
+                    email
+                );
+
+            } else {
+
+                localStorage.removeItem("naijamartRememberedEmail");
+
+            }
+
+        } catch (error) {
+
+            console.warn("Could not save the remembered email.");
+
+        }
+
+        // IMPORTANT:
+        // No real authentication happens here.
+        // A backend must verify the email and password.
+
+        showToast(
+            "Frontend demonstration",
+            "Your fields are valid, but no account has been authenticated. A backend is needed to sign in.",
+            "error"
+        );
+
+    });
+
+
+    // ==========================================
+    // 6. OPTIONAL INPUT FEEDBACK
+    // ==========================================
+
+    emailInput.addEventListener("input", function () {
+        emailInput.style.borderColor = "";
+    });
+
+    passwordInput.addEventListener("input", function () {
+        passwordInput.style.borderColor = "";
+    });
+
+</script>
+
+</body>
+</html>

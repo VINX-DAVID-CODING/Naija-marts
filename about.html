@@ -1,0 +1,2426 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>About NaijaMart | Discover More. Shop Smarter.</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">  <style>
+    /* ==========================================
+       1. GLOBAL SETTINGS
+    ========================================== */
+
+    :root {
+      --orange: #f68b1e;
+      --orange-dark: #dd7008;
+      --orange-light: #fff1e0;
+      --black: #151515;
+      --dark: #202020;
+      --text: #444;
+      --muted: #777;
+      --white: #fff;
+      --green: #078b53;
+      --border: #ededed;
+      --shadow: 0 18px 55px rgba(0, 0, 0, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: white;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Outfit", sans-serif;
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 19px;
+    }
+
+    .eyebrow-dot {
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .section-title {
+      color: var(--black);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 17px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 650px;
+    }
+
+    .center-heading {
+      text-align: center;
+      margin: 0 auto 52px;
+    }
+
+    .center-heading .section-description {
+      margin: auto;
+    }
+
+    .orange-text {
+      color: var(--orange);
+    }
+
+    /* ==========================================
+       2. ANNOUNCEMENT BAR
+    ========================================== */
+
+    .announcement {
+      background: var(--black);
+      color: #eee;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 11px;
+      letter-spacing: 0.3px;
+    }
+
+    .announcement strong {
+      color: #ffb76e;
+    }
+
+    /* ==========================================
+       3. NAVIGATION
+    ========================================== */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-symbol {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 25px;
+      font-weight: 900;
+      font-family: "Outfit", sans-serif;
+      background: linear-gradient(135deg, #ffb65f, #ef7909);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(246, 139, 30, 0.25);
+    }
+
+    .logo-text {
+      font-family: "Outfit", sans-serif;
+      color: var(--black);
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo-text span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+      color: #555;
+      transition: color 0.25s;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--orange-dark);
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      height: 3px;
+      background: var(--orange);
+      border-radius: 10px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .nav-action {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #fff5e9;
+      font-size: 19px;
+      transition: 0.3s;
+    }
+
+    .nav-action:hover {
+      background: var(--orange);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: none;
+      background: var(--orange-light);
+      border-radius: 12px;
+      font-size: 23px;
+    }
+
+    /* ==========================================
+       4. HERO SECTION
+       ABOUT NAijamart + SHOPPING VISUALS
+    ========================================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 0%, #fff0df 0%, #fffaf5 38%, #fff 76%);
+      padding: 65px 0 78px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -140px;
+      left: -130px;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(246, 139, 30, 0.17);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 35px rgba(246, 139, 30, 0.025),
+        0 0 0 75px rgba(246, 139, 30, 0.02);
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -130px;
+      bottom: -180px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: rgba(246, 139, 30, 0.06);
+      z-index: -1;
+    }
+
+    .hero-inner {
+      width: min(1400px, 96%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 1.15fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 27px;
+    }
+
+    .hero-copy {
+      text-align: center;
+      position: relative;
+      z-index: 3;
+      animation: fadeUp 0.85s ease both;
+    }
+
+    .hero-copy .eyebrow {
+      font-size: 10px;
+    }
+
+    .hero h1 {
+      color: var(--black);
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 900;
+      line-height: 1.02;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 .orange-text {
+      display: inline-block;
+      position: relative;
+    }
+
+    .hero h1 .orange-text::after {
+      content: "";
+      height: 8px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -3px;
+      background: #ffd7ad;
+      border-radius: 10px;
+      z-index: -1;
+      transform: rotate(-2deg);
+    }
+
+    .hero-description {
+      max-width: 470px;
+      margin: 0 auto 27px;
+      color: #6d6d6d;
+      font-size: 14px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 20px;
+      border-radius: 13px;
+      font-size: 12px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        background 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      box-shadow: 0 10px 25px rgba(246, 139, 30, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(246, 139, 30, 0.32);
+    }
+
+    .btn-light {
+      color: var(--black);
+      background: white;
+      border-color: #e8e8e8;
+    }
+
+    .btn-light:hover {
+      transform: translateY(-4px);
+      border-color: var(--orange);
+      box-shadow: var(--shadow);
+    }
+
+    /* Visual panels on both sides */
+
+    .hero-visual {
+      min-width: 0;
+      position: relative;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero-visual.left {
+      animation-delay: 0.12s;
+    }
+
+    .hero-visual.right {
+      animation-delay: 0.25s;
+    }
+
+    .visual-card {
+      position: relative;
+      height: 390px;
+      padding: 8px;
+      background: white;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 27px;
+      box-shadow: 0 25px 65px rgba(70, 44, 16, 0.13);
+      transform: rotate(-3deg);
+      transition: transform 0.45s, box-shadow 0.45s;
+    }
+
+    .right .visual-card {
+      transform: rotate(3deg);
+    }
+
+    .hero-visual:hover .visual-card {
+      transform: rotate(0) translateY(-7px);
+      box-shadow: 0 30px 70px rgba(70, 44, 16, 0.2);
+    }
+
+    .visual-card > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .visual-overlay {
+      position: absolute;
+      inset: 8px;
+      border-radius: 20px;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.74),
+        rgba(0, 0, 0, 0.04) 58%,
+        transparent
+      );
+      pointer-events: none;
+    }
+
+    .visual-content {
+      position: absolute;
+      bottom: 24px;
+      left: 23px;
+      right: 23px;
+      color: white;
+    }
+
+    .visual-content .visual-label {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .visual-content h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .visual-content p {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .visual-badge {
+      position: absolute;
+      top: 23px;
+      right: -15px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: white;
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+      z-index: 5;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .left .visual-badge {
+      right: auto;
+      left: -15px;
+    }
+
+    .badge-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: #fff0df;
+      font-size: 17px;
+    }
+
+    .visual-badge small {
+      display: block;
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 25px;
+      font-size: 10px;
+      color: #777;
+    }
+
+    .trust-stars {
+      color: #f3a21b;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .hero-trust strong {
+      color: #333;
+    }
+
+    /* ==========================================
+       5. QUICK INTRO STRIP
+    ========================================== */
+
+    .intro-strip {
+      background: white;
+      border-top: 1px solid #f1e9e1;
+      border-bottom: 1px solid #f1e9e1;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 27px 0;
+    }
+
+    .intro-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 10px;
+      border-right: 1px solid #eee;
+    }
+
+    .intro-item:last-child {
+      border-right: none;
+    }
+
+    .intro-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      background: #fff2e3;
+      border-radius: 14px;
+      font-size: 20px;
+    }
+
+    .intro-item h3 {
+      font-size: 12px;
+      margin-bottom: 3px;
+      color: var(--black);
+    }
+
+    .intro-item p {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* ==========================================
+       6. WHAT IS NAIJAMART?
+    ========================================== */
+
+    .about-section {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .about-visual {
+      position: relative;
+      padding: 0 20px 20px 0;
+    }
+
+    .about-main-image {
+      height: 480px;
+      object-fit: cover;
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-visual::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 68%;
+      height: 65%;
+      border: 4px solid #ffd8b0;
+      border-radius: 27px;
+      z-index: -1;
+    }
+
+    .about-floating-card {
+      position: absolute;
+      bottom: 44px;
+      left: -23px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      background: white;
+      padding: 18px;
+      border-radius: 17px;
+      box-shadow: var(--shadow);
+      max-width: 250px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .about-floating-card .icon {
+      width: 47px;
+      height: 47px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #e9f8ef;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .about-floating-card h4 {
+      font-size: 13px;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .about-floating-card p {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .about-copy .section-title {
+      margin-bottom: 20px;
+    }
+
+    .about-copy > p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .about-features {
+      display: grid;
+      gap: 17px;
+      margin: 27px 0 30px;
+    }
+
+    .about-feature {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+    }
+
+    .feature-check {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      background: #e8f8ef;
+      border-radius: 10px;
+      font-weight: 900;
+    }
+
+    .about-feature h4 {
+      color: var(--black);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .about-feature p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* ==========================================
+       7. SHOPPING CATEGORIES
+    ========================================== */
+
+    .categories-section {
+      background: #fffaf5;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .category-card {
+      background: white;
+      border: 1px solid #f1e7dd;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .category-image {
+      height: 205px;
+      overflow: hidden;
+      position: relative;
+      background: #f4f4f4;
+    }
+
+    .category-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+
+    .category-card:hover .category-image img {
+      transform: scale(1.09);
+    }
+
+    .category-icon {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      font-size: 21px;
+    }
+
+    .category-content {
+      padding: 20px;
+    }
+
+    .category-content h3 {
+      font-size: 18px;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .category-content p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .category-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--orange-dark);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .category-link span {
+      transition: transform 0.3s;
+    }
+
+    .category-card:hover .category-link span {
+      transform: translateX(5px);
+    }
+
+    /* ==========================================
+       8. WHY SHOP WITH NAIJAMART?
+    ========================================== */
+
+    .benefits-section {
+      background: white;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .benefit-card {
+      padding: 32px 27px;
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      background: white;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+    }
+
+    .benefit-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: var(--orange);
+      transition: width 0.35s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: #ffdab8;
+    }
+
+    .benefit-card:hover::after {
+      width: 100%;
+    }
+
+    .benefit-icon {
+      width: 59px;
+      height: 59px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: #fff0df;
+      font-size: 26px;
+      margin-bottom: 23px;
+      transition: transform 0.3s;
+    }
+
+    .benefit-card:nth-child(2) .benefit-icon {
+      background: #e8f8ef;
+    }
+
+    .benefit-card:nth-child(3) .benefit-icon {
+      background: #eeebff;
+    }
+
+    .benefit-card:nth-child(4) .benefit-icon {
+      background: #e8f4ff;
+    }
+
+    .benefit-card:nth-child(5) .benefit-icon {
+      background: #fff0f4;
+    }
+
+    .benefit-card:nth-child(6) .benefit-icon {
+      background: #fff7d9;
+    }
+
+    .benefit-card:hover .benefit-icon {
+      transform: rotate(-7deg) scale(1.08);
+    }
+
+    .benefit-card h3 {
+      color: var(--black);
+      font-size: 20px;
+      margin-bottom: 11px;
+    }
+
+    .benefit-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ==========================================
+       9. HOW THE WEBSITE WORKS
+    ========================================== */
+
+    .steps-section {
+      background: #fffaf5;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step-card {
+      background: white;
+      border: 1px solid #f0e7de;
+      border-radius: 22px;
+      padding: 30px;
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+
+    .step-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 49px;
+      height: 49px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--orange);
+      color: white;
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .step-card h3 {
+      font-size: 20px;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ==========================================
+       10. MISSION BANNER
+    ========================================== */
+
+    .mission-section {
+      padding: 85px 0;
+      background: var(--black);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission-section::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      right: -120px;
+      top: -180px;
+      background: rgba(246, 139, 30, 0.13);
+    }
+
+    .mission-section::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      left: -100px;
+      bottom: -130px;
+      background: rgba(246, 139, 30, 0.09);
+    }
+
+    .mission-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .mission-inner .eyebrow {
+      background: rgba(246, 139, 30, 0.13);
+      color: #ffb76e;
+    }
+
+    .mission-inner h2 {
+      font-size: clamp(32px, 5vw, 53px);
+      font-weight: 900;
+      letter-spacing: -1.7px;
+      margin-bottom: 20px;
+    }
+
+    .mission-inner h2 span {
+      color: var(--orange);
+    }
+
+    .mission-inner p {
+      max-width: 700px;
+      margin: auto;
+      color: #c4c4c4;
+      font-size: 14px;
+    }
+
+    /* ==========================================
+       11. CALL TO ACTION
+    ========================================== */
+
+    .cta-section {
+      padding: 85px 0;
+    }
+
+    .cta-box {
+      padding: 65px 30px;
+      border-radius: 29px;
+      text-align: center;
+      color: white;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.18), transparent 24%),
+        radial-gradient(circle at 90% 90%, rgba(255,255,255,.12), transparent 25%),
+        linear-gradient(135deg, #f9a13f, #e87508);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -1px;
+      margin-bottom: 15px;
+    }
+
+    .cta-box p {
+      max-width: 570px;
+      margin: 0 auto 27px;
+      color: rgba(255,255,255,.92);
+      font-size: 14px;
+    }
+
+    .cta-box .btn {
+      color: var(--black);
+      background: white;
+    }
+
+    .cta-box .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,.15);
+    }
+
+    /* ==========================================
+       12. FOOTER
+    ========================================== */
+
+    .footer {
+      background: #151515;
+      color: #ccc;
+      padding: 65px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 38px;
+      padding-bottom: 45px;
+    }
+
+    .footer .logo-text {
+      color: white;
+    }
+
+    .footer-description {
+      color: #a3a3a3;
+      font-size: 12px;
+      margin-top: 17px;
+      max-width: 300px;
+    }
+
+    .footer h3 {
+      color: white;
+      font-size: 16px;
+      margin-bottom: 19px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      width: fit-content;
+      color: #aaa;
+      font-size: 12px;
+      transition: color 0.25s, transform 0.25s;
+    }
+
+    .footer-links a:hover {
+      color: #ffb76e;
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      border-top: 1px solid #333;
+      padding: 23px 0;
+      color: #929292;
+      font-size: 11px;
+    }
+
+    .footer-bottom span {
+      color: #ffb76e;
+    }
+
+    /* ==========================================
+       13. BACK TO TOP
+    ========================================== */
+
+    .back-to-top {
+      position: fixed;
+      z-index: 900;
+      right: 22px;
+      bottom: 22px;
+      width: 47px;
+      height: 47px;
+      border: none;
+      border-radius: 15px;
+      background: var(--orange);
+      color: white;
+      font-size: 23px;
+      box-shadow: 0 8px 22px rgba(246, 139, 30, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: 0.3s;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--orange-dark);
+      transform: translateY(-4px);
+    }
+
+    /* ==========================================
+       14. ANIMATIONS
+    ========================================== */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-9px);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       15. RESPONSIVE TABLET DESIGN
+    ========================================== */
+
+    @media (max-width: 1050px) {
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero-inner {
+        grid-template-columns: minmax(0, 0.85fr) minmax(280px, 1.2fr) minmax(0, 0.85fr);
+        gap: 18px;
+      }
+
+      .visual-card {
+        height: 320px;
+      }
+
+      .hero h1 {
+        font-size: 49px;
+      }
+
+      .visual-content h3 {
+        font-size: 18px;
+      }
+
+      .about-grid {
+        gap: 45px;
+      }
+
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        gap: 25px;
+      }
+    }
+
+    /* ==========================================
+       16. RESPONSIVE MOBILE DESIGN
+    ========================================== */
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 15px 5%;
+        box-shadow: 0 15px 25px rgba(0,0,0,.07);
+        border-bottom: 1px solid #eee;
+      }
+
+      .nav-links.open {
+        display: flex;
+        animation: fadeUp 0.25s ease;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 0;
+      }
+
+      .nav-links a.active::after {
+        display: none;
+      }
+
+      .nav-actions {
+        margin-left: auto;
+      }
+
+      .hero {
+        padding-top: 45px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr 1fr;
+        width: 92%;
+        gap: 18px;
+      }
+
+      .hero-copy {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        margin-bottom: 5px;
+      }
+
+      .hero h1 {
+        font-size: clamp(43px, 7vw, 60px);
+      }
+
+      .hero-description {
+        max-width: 560px;
+      }
+
+      .hero-visual.left {
+        grid-column: 1;
+      }
+
+      .hero-visual.right {
+        grid-column: 2;
+      }
+
+      .visual-card {
+        height: 290px;
+      }
+
+      .visual-badge {
+        right: -7px;
+      }
+
+      .left .visual-badge {
+        left: -7px;
+      }
+
+      .visual-content {
+        left: 15px;
+        right: 15px;
+        bottom: 17px;
+      }
+
+      .visual-content h3 {
+        font-size: 15px;
+      }
+
+      .visual-content p {
+        font-size: 10px;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .intro-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .intro-item:nth-child(1),
+      .intro-item:nth-child(2) {
+        border-bottom: 1px solid #eee;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .about-visual {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+      }
+
+      .about-main-image {
+        height: 420px;
+      }
+
+      .about-copy {
+        max-width: 650px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .announcement {
+        font-size: 10px;
+      }
+
+      .logo-symbol {
+        width: 37px;
+        height: 37px;
+        font-size: 21px;
+      }
+
+      .logo-text {
+        font-size: 22px;
+      }
+
+      .nav-inner {
+        gap: 8px;
+      }
+
+      .nav-actions {
+        gap: 5px;
+      }
+
+      .nav-action {
+        width: 33px;
+        height: 33px;
+        font-size: 16px;
+      }
+
+      .hero {
+        padding-top: 35px;
+        padding-bottom: 45px;
+      }
+
+      .hero-inner {
+        gap: 12px;
+      }
+
+      .hero-copy .eyebrow {
+        font-size: 9px;
+        padding: 7px 11px;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 10vw, 48px);
+        letter-spacing: -2px;
+        margin-bottom: 17px;
+      }
+
+      .hero-description {
+        font-size: 12px;
+        margin-bottom: 21px;
+      }
+
+      .hero-buttons {
+        gap: 8px;
+      }
+
+      .btn {
+        min-height: 43px;
+        padding: 11px 13px;
+        font-size: 10px;
+      }
+
+      .visual-card {
+        height: 225px;
+        padding: 5px;
+        border-radius: 19px;
+      }
+
+      .visual-card > img {
+        border-radius: 14px;
+      }
+
+      .visual-overlay {
+        inset: 5px;
+        border-radius: 14px;
+      }
+
+      .visual-badge {
+        top: 13px;
+        right: -5px;
+        gap: 5px;
+        padding: 7px;
+        font-size: 8px;
+        border-radius: 10px;
+      }
+
+      .left .visual-badge {
+        left: -5px;
+      }
+
+      .badge-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 13px;
+        border-radius: 7px;
+      }
+
+      .visual-badge small {
+        font-size: 7px;
+      }
+
+      .visual-content {
+        left: 10px;
+        right: 10px;
+        bottom: 11px;
+      }
+
+      .visual-content .visual-label {
+        font-size: 7px;
+        padding: 4px 6px;
+        margin-bottom: 5px;
+      }
+
+      .visual-content h3 {
+        font-size: 12px;
+      }
+
+      .visual-content p {
+        font-size: 8px;
+      }
+
+      .hero-trust {
+        font-size: 9px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .intro-grid {
+        padding: 14px 0;
+      }
+
+      .intro-item {
+        justify-content: flex-start;
+        gap: 9px;
+        padding: 13px 5px;
+      }
+
+      .intro-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 17px;
+        border-radius: 10px;
+      }
+
+      .intro-item h3 {
+        font-size: 10px;
+      }
+
+      .intro-item p {
+        font-size: 9px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .section-description {
+        font-size: 13px;
+      }
+
+      .center-heading {
+        margin-bottom: 35px;
+      }
+
+      .about-main-image {
+        height: 330px;
+      }
+
+      .about-floating-card {
+        left: -3px;
+        bottom: 35px;
+        max-width: 205px;
+        padding: 12px;
+        gap: 9px;
+      }
+
+      .about-floating-card .icon {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+      }
+
+      .about-floating-card h4 {
+        font-size: 11px;
+      }
+
+      .about-floating-card p {
+        font-size: 9px;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .category-image {
+        height: 145px;
+      }
+
+      .category-content {
+        padding: 14px;
+      }
+
+      .category-content h3 {
+        font-size: 15px;
+      }
+
+      .category-content p {
+        font-size: 11px;
+      }
+
+      .category-link {
+        font-size: 10px;
+      }
+
+      .category-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 17px;
+        border-radius: 10px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-card {
+        padding: 25px;
+      }
+
+      .step-card {
+        padding: 25px;
+      }
+
+      .mission-section {
+        padding: 65px 0;
+      }
+
+      .mission-inner h2 {
+        font-size: 34px;
+      }
+
+      .mission-inner p {
+        font-size: 12px;
+      }
+
+      .cta-section {
+        padding: 60px 0;
+      }
+
+      .cta-box {
+        padding: 48px 20px;
+        border-radius: 23px;
+      }
+
+      .cta-box h2 {
+        font-size: 32px;
+      }
+
+      .cta-box p {
+        font-size: 12px;
+      }
+
+      .footer {
+        padding-top: 50px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 18px;
+      }
+
+      .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .back-to-top {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style></head><body>  <!-- TOP ANNOUNCEMENT -->  <div class="announcement">
+    Welcome to <strong>NaijaMart</strong> — Discover More. Shop Smarter.
+  </div>  <!-- NAVIGATION BAR -->  <header class="navbar">
+    <div class="container nav-inner">  <a href="index.html" class="logo">
+    <div class="logo-symbol">N</div>
+    <div class="logo-text">Naija<span>Mart</span></div>
+  </a>
+
+  <nav aria-label="Main navigation">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index1.html">category</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+         <a href="login.html">login</a>
+      <a href="register.html">Register</a>
+    </ul>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="wishlist.html" class="nav-action" aria-label="Wishlist">♡</a>
+    <a href="cart.html" class="nav-action" aria-label="Shopping cart">🛒</a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navLinks">
+      ☰
+    </button>
+  </div>
+
+</div>
+
+  </header>  <main><!-- ========================================
+     HERO: SHOWING THE NAIJAMART SHOPPING EXPERIENCE
+========================================= -->
+
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT: PRODUCT SHOPPING IMAGE -->
+    <div class="hero-visual left">
+      <div class="visual-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85"
+          alt="Fashion products available for online shopping"
+          fetchpriority="high"
+        >
+
+        <div class="visual-overlay"></div>
+
+        <div class="visual-content">
+          <span class="visual-label">Explore fashion</span>
+          <h3>Style for Every Day</h3>
+          <p>Discover fashion, footwear and accessories.</p>
+        </div>
+
+      </div>
+
+      <div class="visual-badge">
+        <div class="badge-icon">👕</div>
+        <div>
+          Fashion & Style
+          <small>Explore your options</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTRE: ABOUT THE WEBSITE -->
+    <div class="hero-copy">
+
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Welcome to NaijaMart
+      </div>
+
+      <h1>
+        Everything<br>
+        you love.<br>
+        <span class="orange-text">One place.</span>
+      </h1>
+
+      <p class="hero-description">
+        NaijaMart is an online shopping destination designed to help you
+        discover products across electronics, fashion, home essentials
+        and more — all through one convenient website.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="products.html" class="btn btn-primary">
+          Explore Products <span>→</span>
+        </a>
+
+        <a href="#what-is-naijamart" class="btn btn-light">
+          Discover Our Story ↓
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <span class="trust-stars">★★★★★</span>
+        <span>Designed for <strong>convenient shopping</strong></span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: ELECTRONICS AND GADGETS IMAGE -->
+    <div class="hero-visual right">
+      <div class="visual-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=900&q=85"
+          alt="Electronic devices and gadgets for online shopping"
+          fetchpriority="high"
+        >
+
+        <div class="visual-overlay"></div>
+
+        <div class="visual-content">
+          <span class="visual-label">Discover technology</span>
+          <h3>Tech Made Exciting</h3>
+          <p>Explore gadgets and everyday electronics.</p>
+        </div>
+
+      </div>
+
+      <div class="visual-badge">
+        <div class="badge-icon">📱</div>
+        <div>
+          Tech & Gadgets
+          <small>Find your next favourite</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUICK BENEFIT STRIP -->
+<section class="intro-strip">
+  <div class="container intro-grid">
+
+    <div class="intro-item">
+      <div class="intro-icon">🛍️</div>
+      <div>
+        <h3>Easy Browsing</h3>
+        <p>Explore different products</p>
+      </div>
+    </div>
+
+    <div class="intro-item">
+      <div class="intro-icon">📱</div>
+      <div>
+        <h3>Mobile Friendly</h3>
+        <p>Shop from your device</p>
+      </div>
+    </div>
+
+    <div class="intro-item">
+      <div class="intro-icon">♡</div>
+      <div>
+        <h3>Save Favourites</h3>
+        <p>Keep a wishlist</p>
+      </div>
+    </div>
+
+    <div class="intro-item">
+      <div class="intro-icon">🛒</div>
+      <div>
+        <h3>Shopping Cart</h3>
+        <p>Collect items you like</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================
+     WHAT IS NAIJAMART?
+========================================= -->
+
+<section class="section about-section" id="what-is-naijamart">
+  <div class="container about-grid">
+
+    <div class="about-visual reveal">
+
+      <img
+        class="about-main-image"
+        src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1000&q=85"
+        alt="Shopping bags and products representing an online shopping experience"
+        loading="lazy"
+      >
+
+      <div class="about-floating-card">
+        <div class="icon">🛍️</div>
+        <div>
+          <h4>Discover More</h4>
+          <p>Your shopping journey starts here.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="about-copy reveal">
+
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        About our website
+      </div>
+
+      <h2 class="section-title">
+        Welcome to your<br>
+        <span class="orange-text">shopping destination.</span>
+      </h2>
+
+      <p>
+        NaijaMart is built around one simple idea: shopping online should
+        be easy to understand, enjoyable to explore and convenient to use.
+      </p>
+
+      <p>
+        Our website brings different product categories together so
+        visitors can explore electronics, fashion, footwear, accessories,
+        home products and other everyday essentials without having to
+        navigate a confusing website.
+      </p>
+
+      <p>
+        You can browse products, open individual product pages, add items
+        to your shopping cart, save favourites to your wishlist and
+        continue through the shopping experience provided by the site.
+      </p>
+
+      <div class="about-features">
+
+        <div class="about-feature">
+          <div class="feature-check">✓</div>
+          <div>
+            <h4>Explore Different Categories</h4>
+            <p>Discover products from different parts of the store.</p>
+          </div>
+        </div>
+
+        <div class="about-feature">
+          <div class="feature-check">✓</div>
+          <div>
+            <h4>View Individual Products</h4>
+            <p>Open a product to see its details and available options.</p>
+          </div>
+        </div>
+
+        <div class="about-feature">
+          <div class="feature-check">✓</div>
+          <div>
+            <h4>Organise Your Shopping</h4>
+            <p>Use the cart and wishlist to keep track of products you like.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="products.html" class="btn btn-primary">
+        Start Exploring <span>→</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================
+     PRODUCT CATEGORIES
+========================================= -->
+
+<section class="section categories-section">
+  <div class="container">
+
+    <div class="center-heading reveal">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Explore the store
+      </div>
+
+      <h2 class="section-title">
+        Discover what you <span class="orange-text">love.</span>
+      </h2>
+
+      <p class="section-description">
+        NaijaMart brings a variety of shopping categories together.
+        Explore different products and find the ones that suit your needs.
+      </p>
+    </div>
+
+    <div class="categories-grid">
+
+      <!-- ELECTRONICS -->
+      <a href="categories.html" class="category-card reveal">
+        <div class="category-image">
+          <img
+            src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=700&q=80"
+            alt="Electronics and gadgets"
+            loading="lazy"
+          >
+          <div class="category-icon">📱</div>
+        </div>
+
+        <div class="category-content">
+          <h3>Electronics</h3>
+          <p>Explore gadgets, devices and useful technology.</p>
+          <span class="category-link">Explore category <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- FASHION -->
+      <a href="categories.html" class="category-card reveal">
+        <div class="category-image">
+          <img
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80"
+            alt="Fashion and clothing"
+            loading="lazy"
+          >
+          <div class="category-icon">👕</div>
+        </div>
+
+        <div class="category-content">
+          <h3>Fashion</h3>
+          <p>Browse clothing, shoes and fashion accessories.</p>
+          <span class="category-link">Explore category <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- HOME -->
+      <a href="categories.html" class="category-card reveal">
+        <div class="category-image">
+          <img
+            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80"
+            alt="Home furniture and interior products"
+            loading="lazy"
+          >
+          <div class="category-icon">🏠</div>
+        </div>
+
+        <div class="category-content">
+          <h3>Home & Living</h3>
+          <p>Discover furniture, decor and home essentials.</p>
+          <span class="category-link">Explore category <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- ACCESSORIES -->
+      <a href="categories.html" class="category-card reveal">
+        <div class="category-image">
+          <img
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
+            alt="Watches and personal accessories"
+            loading="lazy"
+          >
+          <div class="category-icon">⌚</div>
+        </div>
+
+        <div class="category-content">
+          <h3>Accessories</h3>
+          <p>Find watches and finishing touches for your style.</p>
+          <span class="category-link">Explore category <span>→</span></span>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================
+     WHY NAIJAMART?
+========================================= -->
+
+<section class="section benefits-section">
+  <div class="container">
+
+    <div class="center-heading reveal">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        The NaijaMart experience
+      </div>
+
+      <h2 class="section-title">
+        Shopping designed <span class="orange-text">around you.</span>
+      </h2>
+
+      <p class="section-description">
+        Every part of our website is designed to make exploring products
+        more straightforward and enjoyable.
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+
+      <article class="benefit-card reveal">
+        <div class="benefit-icon">🔎</div>
+        <h3>Easy Discovery</h3>
+        <p>
+          Navigate through product categories and explore items without
+          unnecessary complications.
+        </p>
+      </article>
+
+      <article class="benefit-card reveal">
+        <div class="benefit-icon">🛒</div>
+        <h3>Your Shopping Cart</h3>
+        <p>
+          Collect products you are interested in and review your selected
+          items in the shopping cart.
+        </p>
+      </article>
+
+      <article class="benefit-card reveal">
+        <div class="benefit-icon">💛</div>
+        <h3>Wishlist</h3>
+        <p>
+          Keep a collection of favourite products you may want to revisit
+          while exploring the store.
+        </p>
+      </article>
+
+      <article class="benefit-card reveal">
+        <div class="benefit-icon">📱</div>
+        <h3>Responsive Design</h3>
+        <p>
+          Enjoy a layout designed to adapt to phones, tablets, laptops
+          and larger screens.
+        </p>
+      </article>
+
+      <article class="benefit-card reveal">
+        <div class="benefit-icon">🎨</div>
+        <h3>Modern Experience</h3>
+        <p>
+          Explore attractive product cards, clear layouts, smooth
+          transitions and interactive elements.
+        </p>
+      </article>
+
+      <article class="benefit-card reveal">
+        <div class="benefit-icon">📦</div>
+        <h3>Product Details</h3>
+        <p>
+          Open individual product pages to explore the information
+          available for each item.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================
+     HOW TO USE THE WEBSITE
+========================================= -->
+
+<section class="section steps-section">
+  <div class="container">
+
+    <div class="center-heading reveal">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        How it works
+      </div>
+
+      <h2 class="section-title">
+        Your journey from browsing to <span class="orange-text">checkout.</span>
+      </h2>
+
+      <p class="section-description">
+        The website is organised to help you move naturally from
+        discovering products to reviewing your shopping choices.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+
+      <article class="step-card reveal">
+        <div class="step-number">01</div>
+        <h3>Explore Products</h3>
+        <p>
+          Start from the homepage, use the product sections or browse
+          categories to discover items.
+        </p>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">02</div>
+        <h3>Choose Your Favourites</h3>
+        <p>
+          Open product details, add items to the cart or save them
+          to your wishlist.
+        </p>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">03</div>
+        <h3>Review Your Cart</h3>
+        <p>
+          Review the items you selected and continue to checkout if
+          the available checkout features are configured.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================
+     OUR MISSION
+========================================= -->
+
+<section class="mission-section">
+  <div class="container">
+
+    <div class="mission-inner reveal">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Our mission
+      </div>
+
+      <h2>
+        Making online shopping<br>
+        <span>simpler for everyone.</span>
+      </h2>
+
+      <p>
+        Our aim is to create a shopping destination where people can
+        explore different products, discover new possibilities and
+        enjoy a well-organised online experience. We want NaijaMart
+        to grow into a useful, accessible and dependable place to shop.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================
+     FINAL CALL TO ACTION
+========================================= -->
+
+<section class="cta-section">
+  <div class="container">
+
+    <div class="cta-box reveal">
+      <h2>Your next discovery starts here.</h2>
+
+      <p>
+        Explore electronics, fashion, home essentials and more.
+        Visit our store and discover what NaijaMart has to offer.
+      </p>
+
+      <a href="products.html" class="btn">
+        Explore NaijaMart <span>→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  </main>  <!-- ========================================
+       FOOTER
+  ========================================= -->  <footer class="footer">
+    <div class="container">  <div class="footer-grid">
+
+    <div>
+      <a href="index.html" class="logo">
+        <div class="logo-symbol">N</div>
+        <div class="logo-text">Naija<span>Mart</span></div>
+      </a>
+
+      <p class="footer-description">
+        Discover more. Shop smarter. Explore a variety of products
+        through a modern and convenient online shopping experience.
+      </p>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="categories.html">Categories</a>
+      </div>
+    </div>
+
+    <div>
+      <h3>Customer Care</h3>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="orders.html">My Orders</a>
+        <a href="account.html">My Account</a>
+              <a href="login.html">login</a>
+      <a href="register.html">Register</a>
+      </div>
+    </div>
+
+    <div>
+      <h3>My Shopping</h3>
+      <div class="footer-links">
+        <a href="cart.html">Shopping Cart</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="products.html">Shop Products</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="currentYear"></span> NaijaMart. All rights reserved.</p>
+    <p>Created with <span>♥</span> for a better shopping experience.</p>
+  </div>
+
+</div>
+
+  </footer>  <!-- BACK TO TOP --><button
+class="back-to-top"
+id="backToTop"
+aria-label="Back to top">
+↑
+</button>
+
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->  <script>
+    // 1. MOBILE NAVIGATION
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close the menu after choosing a page.
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Close the menu if a user taps outside it.
+    document.addEventListener("click", function (event) {
+      const clickedInsideMenu = navLinks.contains(event.target);
+      const clickedToggle = menuToggle.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedToggle) {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      }
+    });
+
+    // 2. SCROLL REVEAL ANIMATIONS
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      revealElements.forEach(function (element) {
+        revealObserver.observe(element);
+      });
+    } else {
+      revealElements.forEach(function (element) {
+        element.classList.add("show");
+      });
+    }
+
+    // 3. BACK TO TOP BUTTON
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 450) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    });
+
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // 4. AUTOMATIC COPYRIGHT YEAR
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script></body>
+</html>
